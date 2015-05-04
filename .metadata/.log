@@ -1,0 +1,1513 @@
+!SESSION 2015-04-25 18:50:02.173 -----------------------------------------------
+eclipse.buildId=4.3.2.M20140221-1700
+java.version=1.7.0_51
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86
+
+!ENTRY org.eclipse.egit.ui 2 0 2015-04-25 18:53:24.934
+!MESSAGE Warning: EGit couldn't detect the installation path "gitPrefix" of native Git. Hence EGit can't respect system level
+Git settings which might be configured in ${gitPrefix}/etc/gitconfig under the native Git installation directory.
+The most important of these settings is core.autocrlf. Git for Windows by default sets this parameter to true in
+this system level configuration. The Git installation location can be configured on the
+Team > Git > Configuration preference page's 'System Settings' tab.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.egit.ui 2 0 2015-04-25 18:53:24.939
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\dell'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.mylyn.tasks.core 1 0 2015-04-25 18:53:24.967
+!MESSAGE Migrating task repository credentials from keyring.
+
+!ENTRY oracle.eclipse.tools.weblogic 1 0 2015-04-25 19:16:39.228
+!MESSAGE Executing WLST script:
+if __name__ == '__main__': 
+    from wlstModule import *#@UnusedWildImport
+    
+import os
+
+beaHome="C:/Oracle/Middleware/Oracle_Home"
+wlHome="C:/Oracle/Middleware/Oracle_Home/wlserver"
+password= "Delhi@0212"
+installJRF = "%INSTALL_JRF%"
+cfgGrpProfile = 'Compact'
+
+print "beaHome="+beaHome
+print "wlHome="+wlHome
+
+#===========================================================================
+# Open a domain template.
+#===========================================================================
+
+try:
+	readTemplate(wlHome + "/common/templates/wls/wls.jar", cfgGrpProfile)
+except:        
+    print 'Failed to read template '  + wlHome + "/common/templates/domains/wls.jar"
+    dumpStack()
+
+cd('Servers/AdminServer')
+set('ListenAddress','')
+set('ListenPort', 7001)
+
+create('AdminServer','SSL')
+cd('SSL/AdminServer')
+set('Enabled', 'True')
+set('ListenPort', 7002)
+
+#=======================================================================================
+# Define the user password for weblogic.
+#=======================================================================================
+print 'Setting WebLogic domain password'
+
+cd('/')
+cmo=cd('Security/base_domain/User/weblogic')
+# Please set password here before using this script, e.g. cmo.setPassword('value')
+cmo.setPassword( password )
+
+#===========================================================================
+# Set environment variables used by extension templates.
+#===========================================================================
+os.putenv('JDEV_HOME', beaHome + '/jdeveloper/')
+os.putenv('COMMON_COMPONENTS_HOME', beaHome + '/oracle_common/')
+os.putenv('DOMAIN_HOME', r'C:/Oracle/Middleware/Oracle_Home/user_projects/domains//web_domain')
+
+
+#=======================================================================================
+# Add extension templates.
+#=======================================================================================
+addTemplate('C:/Oracle/Middleware/Oracle_Home/wlserver/common/templates/wls/wls_coherence_template_12.1.3.jar')
+addTemplate('C:/Oracle/Middleware/Oracle_Home/oracle_common/common/templates/wls/oracle.wls-webservice-jaxws-template_12.1.3.jar')
+
+
+#=======================================================================================
+# Write the domain and close the domain template.
+#=======================================================================================
+
+setOption('OverwriteDomain', 'true')
+
+print 'Saving WebLogic domain'
+writeDomain( r'C:/Oracle/Middleware/Oracle_Home/user_projects/domains//web_domain' )
+closeTemplate()
+print "script returns SUCCESS"   
+
+
+!ENTRY oracle.eclipse.tools.weblogic 1 1 2015-04-25 19:18:30.912
+!MESSAGE Creating WebLogic domain:
+if __name__ == '__main__': 
+    from wlstModule import *#@UnusedWildImport
+    
+import os
+
+beaHome="C:/Oracle/Middleware/Oracle_Home"
+wlHome="C:/Oracle/Middleware/Oracle_Home/wlserver"
+password= "Delhi@0212"
+installJRF = "%INSTALL_JRF%"
+cfgGrpProfile = 'Compact'
+
+print "beaHome="+beaHome
+print "wlHome="+wlHome
+
+#===========================================================================
+# Open a domain template.
+#===========================================================================
+
+try:
+	readTemplate(wlHome + "/common/templates/wls/wls.jar", cfgGrpProfile)
+except:        
+    print 'Failed to read template '  + wlHome + "/common/templates/domains/wls.jar"
+    dumpStack()
+
+cd('Servers/AdminServer')
+set('ListenAddress','')
+set('ListenPort', 7001)
+
+create('AdminServer','SSL')
+cd('SSL/AdminServer')
+set('Enabled', 'True')
+set('ListenPort', 7002)
+
+#=======================================================================================
+# Define the user password for weblogic.
+#=======================================================================================
+print 'Setting WebLogic domain password'
+
+cd('/')
+cmo=cd('Security/base_domain/User/weblogic')
+# Please set password here before using this script, e.g. cmo.setPassword('value')
+cmo.setPassword( password )
+
+#===========================================================================
+# Set environment variables used by extension templates.
+#===========================================================================
+os.putenv('JDEV_HOME', beaHome + '/jdeveloper/')
+os.putenv('COMMON_COMPONENTS_HOME', beaHome + '/oracle_common/')
+os.putenv('DOMAIN_HOME', r'C:/Oracle/Middleware/Oracle_Home/user_projects/domains//web_domain')
+
+
+#=======================================================================================
+# Add extension templates.
+#=======================================================================================
+addTemplate('C:/Oracle/Middleware/Oracle_Home/wlserver/common/templates/wls/wls_coherence_template_12.1.3.jar')
+addTemplate('C:/Oracle/Middleware/Oracle_Home/oracle_common/common/templates/wls/oracle.wls-webservice-jaxws-template_12.1.3.jar')
+
+
+#=======================================================================================
+# Write the domain and close the domain template.
+#=======================================================================================
+
+setOption('OverwriteDomain', 'true')
+
+print 'Saving WebLogic domain'
+writeDomain( r'C:/Oracle/Middleware/Oracle_Home/user_projects/domains//web_domain' )
+closeTemplate()
+print "script returns SUCCESS"   
+
+
+
+!ENTRY oracle.eclipse.tools.weblogic 4 4 2015-04-25 19:18:34.556
+!MESSAGE Unable to find tools.jar within Java VM associated with target WebLogic runtime; features dependent on tools.jar may not function
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-04-25 19:25:20.771
+!MESSAGE Started WebLogic Server Monitor [web_domain@localhost:7001, Version:12.1.3.0.0]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-04-25 19:30:33.240
+!MESSAGE Server watcher[Oracle WebLogic Server 12c (12.1.3) at localhost [web_domain]]:running Weblogic detected, validating...
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-04-25 19:30:37.347
+!MESSAGE JMX Connection created to WebLogic Server @:[service:jmx:t3://localhost:7001/jndi/weblogic.management.mbeanservers.domainruntime]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-04-25 19:30:43.773
+!MESSAGE Creating Deployment manager...
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-04-25 19:30:43.778
+!MESSAGE Elapsed time 6222ms
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-04-25 19:30:43.782
+!MESSAGE Deployment manager created :[Oracle WebLogic Server 12c (12.1.3) at localhost [web_domain] t3://localhost:7001]@9016291
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-04-25 19:30:49.228
+!MESSAGE Publishing beginning.
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-04-25 19:30:49.243
+!MESSAGE Found new module:[com.learning.testProject]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-04-25 19:30:49.243
+!MESSAGE Releasing deployment manager :[Oracle WebLogic Server 12c (12.1.3) at localhost [web_domain]]@9016291
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-04-25 19:30:54.885
+!MESSAGE Creating Deployment manager...
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-04-25 19:30:54.889
+!MESSAGE Elapsed time 5573ms
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-04-25 19:30:54.901
+!MESSAGE Deployment manager created :[Oracle WebLogic Server 12c (12.1.3) at localhost [web_domain] t3://localhost:7001]@1919712
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-04-25 19:30:55.038
+!MESSAGE Total deleted modules: 0
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-04-25 19:30:55.368
+!MESSAGE Module Status: 
+-com.learning.testProject (add) (deploy)
+
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-04-25 19:30:55.384
+!MESSAGE ***dm.getAvailableModules (initModuleNameCache)
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-04-25 19:30:55.415
+!MESSAGE ***dm.distribute (deploy) module _auto_generated_ear_
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-04-25 19:30:57.164
+!MESSAGE Waiting on ProgressObject:@23051356
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-04-25 19:30:58.266
+!MESSAGE ProgressObject completed :@23051356
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-04-25 19:30:58.282
+!MESSAGE _auto_generated_ear_ deployed successfully.
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-04-25 19:30:58.282
+!MESSAGE ***dm.start (startModule) _auto_generated_ear_
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-04-25 19:30:59.440
+!MESSAGE Waiting on ProgressObject:@14537185
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-04-25 19:30:59.828
+!MESSAGE ProgressObject completed :@14537185
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-04-25 19:30:59.828
+!MESSAGE Started _auto_generated_ear_
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-04-25 19:30:59.828
+!MESSAGE Module _auto_generated_ear_ deployed successfully.
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-04-25 19:30:59.844
+!MESSAGE Publishing finished.
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-04-25 19:54:56.191
+!MESSAGE Server watcher[Oracle WebLogic Server 12c (12.1.3) at localhost [web_domain]]:running Weblogic detected, validating...
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-04-25 19:54:56.326
+!MESSAGE Releasing deployment manager :[Oracle WebLogic Server 12c (12.1.3) at localhost [web_domain]]@1919712
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-04-25 19:54:56.608
+!MESSAGE JMX Connection created to WebLogic Server @:[service:jmx:t3://localhost:7001/jndi/weblogic.management.mbeanservers.domainruntime]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-04-25 19:55:01.170
+!MESSAGE Creating Deployment manager...
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-04-25 19:55:01.172
+!MESSAGE Elapsed time 4510ms
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-04-25 19:55:01.172
+!MESSAGE Deployment manager created :[Oracle WebLogic Server 12c (12.1.3) at localhost [web_domain] t3://localhost:7001]@2084971
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-04-25 21:04:08.207
+!MESSAGE Releasing deployment manager :[Oracle WebLogic Server 12c (12.1.3) at localhost [web_domain]]@2084971
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-04-25 21:06:59.014
+!MESSAGE Server watcher[Oracle WebLogic Server 12c (12.1.3) at localhost [web_domain]]:running Weblogic detected, validating...
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-04-25 21:07:01.541
+!MESSAGE JMX Connection created to WebLogic Server @:[service:jmx:t3://localhost:7001/jndi/weblogic.management.mbeanservers.domainruntime]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-04-25 21:07:08.035
+!MESSAGE Creating Deployment manager...
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-04-25 21:07:08.041
+!MESSAGE Elapsed time 6289ms
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-04-25 21:07:08.046
+!MESSAGE Deployment manager created :[Oracle WebLogic Server 12c (12.1.3) at localhost [web_domain] t3://localhost:7001]@8582050
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-04-25 21:07:08.669
+!MESSAGE Publishing beginning.
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-04-25 21:07:08.677
+!MESSAGE Module changed:[com.learning.testProject]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-04-25 21:07:08.683
+!MESSAGE Total deleted modules: 0
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-04-25 21:07:08.729
+!MESSAGE Module changed:[com.learning.testProject]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-04-25 21:07:08.733
+!MESSAGE Module Status: 
+-com.learning.testProject (change) (redeploy)
+
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-04-25 21:07:08.742
+!MESSAGE ***dm.getAvailableModules (initModuleNameCache)
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-04-25 21:07:09.162
+!MESSAGE Status INFO: oracle.eclipse.tools.weblogic code=2000 ***dm.undeploy (undeploy) _auto_generated_ear_ null from targets [{Target=AdminServer, WebLogicTargetType=server, Name=_auto_generated_ear_}]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-04-25 21:07:10.787
+!MESSAGE Waiting on ProgressObject:@33299792
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-04-25 21:07:11.383
+!MESSAGE ProgressObject completed :@33299792
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-04-25 21:07:11.392
+!MESSAGE ***dm.getAvailableModules (initModuleNameCache)
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-04-25 21:07:11.414
+!MESSAGE Module _auto_generated_ear_ was undeployed sucessfully.
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-04-25 21:07:11.418
+!MESSAGE ***dm.getAvailableModules (initModuleNameCache)
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-04-25 21:07:11.434
+!MESSAGE ***dm.distribute (deploy) module _auto_generated_ear_
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-04-25 21:07:12.595
+!MESSAGE Waiting on ProgressObject:@7258914
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-04-25 21:07:13.893
+!MESSAGE ProgressObject completed :@7258914
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-04-25 21:07:13.902
+!MESSAGE _auto_generated_ear_ deployed successfully.
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-04-25 21:07:13.910
+!MESSAGE ***dm.start (startModule) _auto_generated_ear_
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-04-25 21:07:15.097
+!MESSAGE Waiting on ProgressObject:@873338
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-04-25 21:07:15.352
+!MESSAGE ProgressObject completed :@873338
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-04-25 21:07:15.356
+!MESSAGE Started _auto_generated_ear_
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-04-25 21:07:15.360
+!MESSAGE Module _auto_generated_ear_ deployed successfully.
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-04-25 21:07:15.364
+!MESSAGE Publishing finished.
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-04-25 22:29:33.994
+!MESSAGE Releasing deployment manager :[Oracle WebLogic Server 12c (12.1.3) at localhost [web_domain]]@8582050
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-04-25 22:32:18.023
+!MESSAGE Server watcher[Oracle WebLogic Server 12c (12.1.3) at localhost [web_domain]]:running Weblogic detected, validating...
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-04-25 22:32:24.574
+!MESSAGE JMX Connection created to WebLogic Server @:[service:jmx:t3://localhost:7001/jndi/weblogic.management.mbeanservers.domainruntime]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-04-25 22:32:35.840
+!MESSAGE Creating Deployment manager...
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-04-25 22:32:35.855
+!MESSAGE Elapsed time 11063ms
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-04-25 22:32:35.855
+!MESSAGE Deployment manager created :[Oracle WebLogic Server 12c (12.1.3) at localhost [web_domain] t3://localhost:7001]@27614859
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-04-25 22:39:39.286
+!MESSAGE Releasing deployment manager :[Oracle WebLogic Server 12c (12.1.3) at localhost [web_domain]]@27614859
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-04-25 22:40:19.674
+!MESSAGE Stopped WebLogic Server Monitor [web_domain@localhost:7001, Version:12.1.3.0.0]
+!SESSION 2015-04-26 14:21:57.483 -----------------------------------------------
+eclipse.buildId=4.3.2.M20140221-1700
+java.version=1.7.0_51
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86
+
+!ENTRY org.eclipse.egit.ui 2 0 2015-04-26 14:23:34.638
+!MESSAGE Warning: EGit couldn't detect the installation path "gitPrefix" of native Git. Hence EGit can't respect system level
+Git settings which might be configured in ${gitPrefix}/etc/gitconfig under the native Git installation directory.
+The most important of these settings is core.autocrlf. Git for Windows by default sets this parameter to true in
+this system level configuration. The Git installation location can be configured on the
+Team > Git > Configuration preference page's 'System Settings' tab.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.egit.ui 2 0 2015-04-26 14:23:34.706
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\dell'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-04-26 14:23:35.800
+!MESSAGE Started WebLogic Server Monitor [web_domain@localhost:7001, Version:12.1.3.0.0]
+
+!ENTRY oracle.eclipse.tools.weblogic 4 4 2015-04-26 14:23:37.893
+!MESSAGE Unable to find tools.jar within Java VM associated with target WebLogic runtime; features dependent on tools.jar may not function
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-04-26 14:26:13.384
+!MESSAGE Server watcher[Oracle WebLogic Server 12c (12.1.3) at localhost [web_domain]]:running Weblogic detected, validating...
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-04-26 14:26:20.096
+!MESSAGE JMX Connection created to WebLogic Server @:[service:jmx:t3://localhost:7001/jndi/weblogic.management.mbeanservers.domainruntime]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-04-26 14:26:27.166
+!MESSAGE Creating Deployment manager...
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-04-26 14:26:27.170
+!MESSAGE Elapsed time 6688ms
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-04-26 14:26:27.175
+!MESSAGE Deployment manager created :[Oracle WebLogic Server 12c (12.1.3) at localhost [web_domain] t3://localhost:7001]@2973210
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-04-26 14:26:28.585
+!MESSAGE Publishing beginning.
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-04-26 14:26:28.715
+!MESSAGE Module not changed:[com.learning.testProject]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-04-26 14:26:28.721
+!MESSAGE Total deleted modules: 0
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-04-26 14:26:29.657
+!MESSAGE Module Status: 
+-com.learning.testProject
+
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-04-26 14:26:29.737
+!MESSAGE ***dm.getAvailableModules (initModuleNameCache)
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-04-26 14:26:30.188
+!MESSAGE Status INFO: oracle.eclipse.tools.weblogic code=2000 ***dm.undeploy (undeploy) _auto_generated_ear_ null from targets [{Target=AdminServer, WebLogicTargetType=server, Name=_auto_generated_ear_}]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-04-26 14:26:32.659
+!MESSAGE Waiting on ProgressObject:@23280058
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-04-26 14:26:33.812
+!MESSAGE ProgressObject completed :@23280058
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-04-26 14:26:33.821
+!MESSAGE ***dm.getAvailableModules (initModuleNameCache)
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-04-26 14:26:33.846
+!MESSAGE Module _auto_generated_ear_ was undeployed sucessfully.
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-04-26 14:26:33.850
+!MESSAGE ***dm.getAvailableModules (initModuleNameCache)
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-04-26 14:26:33.870
+!MESSAGE ***dm.distribute (deploy) module _auto_generated_ear_
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-04-26 14:26:40.660
+!MESSAGE Waiting on ProgressObject:@30704094
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-04-26 14:26:41.658
+!MESSAGE ProgressObject completed :@30704094
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-04-26 14:26:41.670
+!MESSAGE _auto_generated_ear_ deployed successfully.
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-04-26 14:26:41.675
+!MESSAGE ***dm.start (startModule) _auto_generated_ear_
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-04-26 14:26:43.051
+!MESSAGE Waiting on ProgressObject:@8764658
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-04-26 14:26:43.458
+!MESSAGE ProgressObject completed :@8764658
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-04-26 14:26:43.468
+!MESSAGE Started _auto_generated_ear_
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-04-26 14:26:43.473
+!MESSAGE Module _auto_generated_ear_ deployed successfully.
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-04-26 14:26:43.478
+!MESSAGE Publishing finished.
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-04-26 14:37:28.679
+!MESSAGE Releasing deployment manager :[Oracle WebLogic Server 12c (12.1.3) at localhost [web_domain]]@2973210
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-04-26 14:38:21.353
+!MESSAGE Server watcher[Oracle WebLogic Server 12c (12.1.3) at localhost [web_domain]]:running Weblogic detected, validating...
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-04-26 14:38:25.617
+!MESSAGE JMX Connection created to WebLogic Server @:[service:jmx:t3://localhost:7001/jndi/weblogic.management.mbeanservers.domainruntime]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-04-26 14:38:31.687
+!MESSAGE Creating Deployment manager...
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-04-26 14:38:31.692
+!MESSAGE Elapsed time 5977ms
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-04-26 14:38:31.698
+!MESSAGE Deployment manager created :[Oracle WebLogic Server 12c (12.1.3) at localhost [web_domain] t3://localhost:7001]@5517847
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-04-26 16:03:30.570
+!MESSAGE Releasing deployment manager :[Oracle WebLogic Server 12c (12.1.3) at localhost [web_domain]]@5517847
+
+!ENTRY org.eclipse.debug.core 4 2 2015-04-26 16:04:20.652
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.debug.core".
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.jdt.launching.sourcelookup.containers.JavaSourceLookupParticipant.dispose(JavaSourceLookupParticipant.java:68)
+	at org.eclipse.debug.core.sourcelookup.AbstractSourceLookupDirector.dispose(AbstractSourceLookupDirector.java:216)
+	at org.eclipse.debug.core.sourcelookup.AbstractSourceLookupDirector.initializeDefaults(AbstractSourceLookupDirector.java:574)
+	at org.eclipse.debug.core.sourcelookup.AbstractSourceLookupDirector.launchConfigurationChanged(AbstractSourceLookupDirector.java:350)
+	at org.eclipse.debug.internal.core.LaunchManager$ConfigurationNotifier.run(LaunchManager.java:228)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.debug.internal.core.LaunchManager$ConfigurationNotifier.notify(LaunchManager.java:209)
+	at org.eclipse.debug.internal.core.LaunchManager.launchConfigurationChanged(LaunchManager.java:2141)
+	at org.eclipse.debug.internal.core.LaunchConfigurationWorkingCopy.writeNewFile(LaunchConfigurationWorkingCopy.java:380)
+	at org.eclipse.debug.internal.core.LaunchConfigurationWorkingCopy.doSave0(LaunchConfigurationWorkingCopy.java:246)
+	at org.eclipse.debug.internal.core.LaunchConfigurationWorkingCopy.doSave(LaunchConfigurationWorkingCopy.java:216)
+	at org.eclipse.debug.internal.core.LaunchConfigurationWorkingCopy.doSave(LaunchConfigurationWorkingCopy.java:170)
+	at org.eclipse.wst.server.core.internal.Server$8.run(Server.java:1710)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+!ENTRY org.eclipse.debug.core 4 120 2015-04-26 16:04:20.699
+!MESSAGE An exception occurred during launch configuration change notification.
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.jdt.launching.sourcelookup.containers.JavaSourceLookupParticipant.dispose(JavaSourceLookupParticipant.java:68)
+	at org.eclipse.debug.core.sourcelookup.AbstractSourceLookupDirector.dispose(AbstractSourceLookupDirector.java:216)
+	at org.eclipse.debug.core.sourcelookup.AbstractSourceLookupDirector.initializeDefaults(AbstractSourceLookupDirector.java:574)
+	at org.eclipse.debug.core.sourcelookup.AbstractSourceLookupDirector.launchConfigurationChanged(AbstractSourceLookupDirector.java:350)
+	at org.eclipse.debug.internal.core.LaunchManager$ConfigurationNotifier.run(LaunchManager.java:228)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.debug.internal.core.LaunchManager$ConfigurationNotifier.notify(LaunchManager.java:209)
+	at org.eclipse.debug.internal.core.LaunchManager.launchConfigurationChanged(LaunchManager.java:2141)
+	at org.eclipse.debug.internal.core.LaunchConfigurationWorkingCopy.writeNewFile(LaunchConfigurationWorkingCopy.java:380)
+	at org.eclipse.debug.internal.core.LaunchConfigurationWorkingCopy.doSave0(LaunchConfigurationWorkingCopy.java:246)
+	at org.eclipse.debug.internal.core.LaunchConfigurationWorkingCopy.doSave(LaunchConfigurationWorkingCopy.java:216)
+	at org.eclipse.debug.internal.core.LaunchConfigurationWorkingCopy.doSave(LaunchConfigurationWorkingCopy.java:170)
+	at org.eclipse.wst.server.core.internal.Server$8.run(Server.java:1710)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-04-26 16:05:48.832
+!MESSAGE Server watcher[Oracle WebLogic Server 12c (12.1.3) at localhost [web_domain]]:running Weblogic detected, validating...
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-04-26 16:05:52.751
+!MESSAGE JMX Connection created to WebLogic Server @:[service:jmx:t3://localhost:7001/jndi/weblogic.management.mbeanservers.domainruntime]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-04-26 16:06:07.730
+!MESSAGE Creating Deployment manager...
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-04-26 16:06:07.730
+!MESSAGE Elapsed time 14808ms
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-04-26 16:06:07.745
+!MESSAGE Deployment manager created :[Oracle WebLogic Server 12c (12.1.3) at localhost [web_domain] t3://localhost:7001]@20783322
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-04-26 16:08:09.004
+!MESSAGE Releasing deployment manager :[Oracle WebLogic Server 12c (12.1.3) at localhost [web_domain]]@20783322
+
+!ENTRY org.eclipse.debug.core 4 2 2015-04-26 16:08:20.059
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.debug.core".
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.jdt.launching.sourcelookup.containers.JavaSourceLookupParticipant.dispose(JavaSourceLookupParticipant.java:68)
+	at org.eclipse.debug.core.sourcelookup.AbstractSourceLookupDirector.dispose(AbstractSourceLookupDirector.java:216)
+	at org.eclipse.debug.core.sourcelookup.AbstractSourceLookupDirector.initializeDefaults(AbstractSourceLookupDirector.java:574)
+	at org.eclipse.debug.core.sourcelookup.AbstractSourceLookupDirector.launchConfigurationChanged(AbstractSourceLookupDirector.java:350)
+	at org.eclipse.debug.internal.core.LaunchManager$ConfigurationNotifier.run(LaunchManager.java:228)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.debug.internal.core.LaunchManager$ConfigurationNotifier.notify(LaunchManager.java:209)
+	at org.eclipse.debug.internal.core.LaunchManager.launchConfigurationChanged(LaunchManager.java:2141)
+	at org.eclipse.debug.internal.core.LaunchConfigurationWorkingCopy.writeNewFile(LaunchConfigurationWorkingCopy.java:380)
+	at org.eclipse.debug.internal.core.LaunchConfigurationWorkingCopy.doSave0(LaunchConfigurationWorkingCopy.java:246)
+	at org.eclipse.debug.internal.core.LaunchConfigurationWorkingCopy.doSave(LaunchConfigurationWorkingCopy.java:216)
+	at org.eclipse.debug.internal.core.LaunchConfigurationWorkingCopy.doSave(LaunchConfigurationWorkingCopy.java:170)
+	at org.eclipse.wst.server.core.internal.Server$8.run(Server.java:1710)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+!ENTRY org.eclipse.debug.core 4 120 2015-04-26 16:08:20.074
+!MESSAGE An exception occurred during launch configuration change notification.
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.jdt.launching.sourcelookup.containers.JavaSourceLookupParticipant.dispose(JavaSourceLookupParticipant.java:68)
+	at org.eclipse.debug.core.sourcelookup.AbstractSourceLookupDirector.dispose(AbstractSourceLookupDirector.java:216)
+	at org.eclipse.debug.core.sourcelookup.AbstractSourceLookupDirector.initializeDefaults(AbstractSourceLookupDirector.java:574)
+	at org.eclipse.debug.core.sourcelookup.AbstractSourceLookupDirector.launchConfigurationChanged(AbstractSourceLookupDirector.java:350)
+	at org.eclipse.debug.internal.core.LaunchManager$ConfigurationNotifier.run(LaunchManager.java:228)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.debug.internal.core.LaunchManager$ConfigurationNotifier.notify(LaunchManager.java:209)
+	at org.eclipse.debug.internal.core.LaunchManager.launchConfigurationChanged(LaunchManager.java:2141)
+	at org.eclipse.debug.internal.core.LaunchConfigurationWorkingCopy.writeNewFile(LaunchConfigurationWorkingCopy.java:380)
+	at org.eclipse.debug.internal.core.LaunchConfigurationWorkingCopy.doSave0(LaunchConfigurationWorkingCopy.java:246)
+	at org.eclipse.debug.internal.core.LaunchConfigurationWorkingCopy.doSave(LaunchConfigurationWorkingCopy.java:216)
+	at org.eclipse.debug.internal.core.LaunchConfigurationWorkingCopy.doSave(LaunchConfigurationWorkingCopy.java:170)
+	at org.eclipse.wst.server.core.internal.Server$8.run(Server.java:1710)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-04-26 16:08:52.248
+!MESSAGE Server watcher[Oracle WebLogic Server 12c (12.1.3) at localhost [web_domain]]:running Weblogic detected, validating...
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-04-26 16:08:56.367
+!MESSAGE JMX Connection created to WebLogic Server @:[service:jmx:t3://localhost:7001/jndi/weblogic.management.mbeanservers.domainruntime]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-04-26 16:09:01.223
+!MESSAGE Creating Deployment manager...
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-04-26 16:09:01.223
+!MESSAGE Elapsed time 4778ms
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-04-26 16:09:01.239
+!MESSAGE Deployment manager created :[Oracle WebLogic Server 12c (12.1.3) at localhost [web_domain] t3://localhost:7001]@13311276
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-04-26 16:09:18.549
+!MESSAGE Releasing deployment manager :[Oracle WebLogic Server 12c (12.1.3) at localhost [web_domain]]@13311276
+
+!ENTRY org.eclipse.debug.core 4 2 2015-04-26 16:09:29.600
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.debug.core".
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.jdt.launching.sourcelookup.containers.JavaSourceLookupParticipant.dispose(JavaSourceLookupParticipant.java:68)
+	at org.eclipse.debug.core.sourcelookup.AbstractSourceLookupDirector.dispose(AbstractSourceLookupDirector.java:216)
+	at org.eclipse.debug.core.sourcelookup.AbstractSourceLookupDirector.initializeDefaults(AbstractSourceLookupDirector.java:574)
+	at org.eclipse.debug.core.sourcelookup.AbstractSourceLookupDirector.launchConfigurationChanged(AbstractSourceLookupDirector.java:350)
+	at org.eclipse.debug.internal.core.LaunchManager$ConfigurationNotifier.run(LaunchManager.java:228)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.debug.internal.core.LaunchManager$ConfigurationNotifier.notify(LaunchManager.java:209)
+	at org.eclipse.debug.internal.core.LaunchManager.launchConfigurationChanged(LaunchManager.java:2141)
+	at org.eclipse.debug.internal.core.LaunchConfigurationWorkingCopy.writeNewFile(LaunchConfigurationWorkingCopy.java:380)
+	at org.eclipse.debug.internal.core.LaunchConfigurationWorkingCopy.doSave0(LaunchConfigurationWorkingCopy.java:246)
+	at org.eclipse.debug.internal.core.LaunchConfigurationWorkingCopy.doSave(LaunchConfigurationWorkingCopy.java:216)
+	at org.eclipse.debug.internal.core.LaunchConfigurationWorkingCopy.doSave(LaunchConfigurationWorkingCopy.java:170)
+	at org.eclipse.wst.server.core.internal.Server$8.run(Server.java:1710)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+!ENTRY org.eclipse.debug.core 4 120 2015-04-26 16:09:29.693
+!MESSAGE An exception occurred during launch configuration change notification.
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.jdt.launching.sourcelookup.containers.JavaSourceLookupParticipant.dispose(JavaSourceLookupParticipant.java:68)
+	at org.eclipse.debug.core.sourcelookup.AbstractSourceLookupDirector.dispose(AbstractSourceLookupDirector.java:216)
+	at org.eclipse.debug.core.sourcelookup.AbstractSourceLookupDirector.initializeDefaults(AbstractSourceLookupDirector.java:574)
+	at org.eclipse.debug.core.sourcelookup.AbstractSourceLookupDirector.launchConfigurationChanged(AbstractSourceLookupDirector.java:350)
+	at org.eclipse.debug.internal.core.LaunchManager$ConfigurationNotifier.run(LaunchManager.java:228)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.debug.internal.core.LaunchManager$ConfigurationNotifier.notify(LaunchManager.java:209)
+	at org.eclipse.debug.internal.core.LaunchManager.launchConfigurationChanged(LaunchManager.java:2141)
+	at org.eclipse.debug.internal.core.LaunchConfigurationWorkingCopy.writeNewFile(LaunchConfigurationWorkingCopy.java:380)
+	at org.eclipse.debug.internal.core.LaunchConfigurationWorkingCopy.doSave0(LaunchConfigurationWorkingCopy.java:246)
+	at org.eclipse.debug.internal.core.LaunchConfigurationWorkingCopy.doSave(LaunchConfigurationWorkingCopy.java:216)
+	at org.eclipse.debug.internal.core.LaunchConfigurationWorkingCopy.doSave(LaunchConfigurationWorkingCopy.java:170)
+	at org.eclipse.wst.server.core.internal.Server$8.run(Server.java:1710)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-04-26 16:10:03.386
+!MESSAGE Server watcher[Oracle WebLogic Server 12c (12.1.3) at localhost [web_domain]]:running Weblogic detected, validating...
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-04-26 16:10:07.304
+!MESSAGE JMX Connection created to WebLogic Server @:[service:jmx:t3://localhost:7001/jndi/weblogic.management.mbeanservers.domainruntime]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-04-26 16:10:12.636
+!MESSAGE Creating Deployment manager...
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-04-26 16:10:12.636
+!MESSAGE Elapsed time 5247ms
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-04-26 16:10:12.636
+!MESSAGE Deployment manager created :[Oracle WebLogic Server 12c (12.1.3) at localhost [web_domain] t3://localhost:7001]@32796332
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-04-26 16:26:21.012
+!MESSAGE Releasing deployment manager :[Oracle WebLogic Server 12c (12.1.3) at localhost [web_domain]]@32796332
+
+!ENTRY org.eclipse.debug.core 4 2 2015-04-26 16:26:36.024
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.debug.core".
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.jdt.launching.sourcelookup.containers.JavaSourceLookupParticipant.dispose(JavaSourceLookupParticipant.java:68)
+	at org.eclipse.debug.core.sourcelookup.AbstractSourceLookupDirector.dispose(AbstractSourceLookupDirector.java:216)
+	at org.eclipse.debug.core.sourcelookup.AbstractSourceLookupDirector.initializeDefaults(AbstractSourceLookupDirector.java:574)
+	at org.eclipse.debug.core.sourcelookup.AbstractSourceLookupDirector.launchConfigurationChanged(AbstractSourceLookupDirector.java:350)
+	at org.eclipse.debug.internal.core.LaunchManager$ConfigurationNotifier.run(LaunchManager.java:228)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.debug.internal.core.LaunchManager$ConfigurationNotifier.notify(LaunchManager.java:209)
+	at org.eclipse.debug.internal.core.LaunchManager.launchConfigurationChanged(LaunchManager.java:2141)
+	at org.eclipse.debug.internal.core.LaunchConfigurationWorkingCopy.writeNewFile(LaunchConfigurationWorkingCopy.java:380)
+	at org.eclipse.debug.internal.core.LaunchConfigurationWorkingCopy.doSave0(LaunchConfigurationWorkingCopy.java:246)
+	at org.eclipse.debug.internal.core.LaunchConfigurationWorkingCopy.doSave(LaunchConfigurationWorkingCopy.java:216)
+	at org.eclipse.debug.internal.core.LaunchConfigurationWorkingCopy.doSave(LaunchConfigurationWorkingCopy.java:170)
+	at org.eclipse.wst.server.core.internal.Server$8.run(Server.java:1710)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+!ENTRY org.eclipse.debug.core 4 120 2015-04-26 16:26:36.039
+!MESSAGE An exception occurred during launch configuration change notification.
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.jdt.launching.sourcelookup.containers.JavaSourceLookupParticipant.dispose(JavaSourceLookupParticipant.java:68)
+	at org.eclipse.debug.core.sourcelookup.AbstractSourceLookupDirector.dispose(AbstractSourceLookupDirector.java:216)
+	at org.eclipse.debug.core.sourcelookup.AbstractSourceLookupDirector.initializeDefaults(AbstractSourceLookupDirector.java:574)
+	at org.eclipse.debug.core.sourcelookup.AbstractSourceLookupDirector.launchConfigurationChanged(AbstractSourceLookupDirector.java:350)
+	at org.eclipse.debug.internal.core.LaunchManager$ConfigurationNotifier.run(LaunchManager.java:228)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.debug.internal.core.LaunchManager$ConfigurationNotifier.notify(LaunchManager.java:209)
+	at org.eclipse.debug.internal.core.LaunchManager.launchConfigurationChanged(LaunchManager.java:2141)
+	at org.eclipse.debug.internal.core.LaunchConfigurationWorkingCopy.writeNewFile(LaunchConfigurationWorkingCopy.java:380)
+	at org.eclipse.debug.internal.core.LaunchConfigurationWorkingCopy.doSave0(LaunchConfigurationWorkingCopy.java:246)
+	at org.eclipse.debug.internal.core.LaunchConfigurationWorkingCopy.doSave(LaunchConfigurationWorkingCopy.java:216)
+	at org.eclipse.debug.internal.core.LaunchConfigurationWorkingCopy.doSave(LaunchConfigurationWorkingCopy.java:170)
+	at org.eclipse.wst.server.core.internal.Server$8.run(Server.java:1710)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-04-26 16:27:06.509
+!MESSAGE Server watcher[Oracle WebLogic Server 12c (12.1.3) at localhost [web_domain]]:running Weblogic detected, validating...
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-04-26 16:27:08.318
+!MESSAGE JMX Connection created to WebLogic Server @:[service:jmx:t3://localhost:7001/jndi/weblogic.management.mbeanservers.domainruntime]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-04-26 16:27:14.771
+!MESSAGE Creating Deployment manager...
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-04-26 16:27:14.786
+!MESSAGE Elapsed time 6281ms
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-04-26 16:27:14.786
+!MESSAGE Deployment manager created :[Oracle WebLogic Server 12c (12.1.3) at localhost [web_domain] t3://localhost:7001]@11701846
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-04-26 16:34:39.415
+!MESSAGE Releasing deployment manager :[Oracle WebLogic Server 12c (12.1.3) at localhost [web_domain]]@11701846
+
+!ENTRY org.eclipse.debug.core 4 2 2015-04-26 16:34:50.482
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.debug.core".
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.jdt.launching.sourcelookup.containers.JavaSourceLookupParticipant.dispose(JavaSourceLookupParticipant.java:68)
+	at org.eclipse.debug.core.sourcelookup.AbstractSourceLookupDirector.dispose(AbstractSourceLookupDirector.java:216)
+	at org.eclipse.debug.core.sourcelookup.AbstractSourceLookupDirector.initializeDefaults(AbstractSourceLookupDirector.java:574)
+	at org.eclipse.debug.core.sourcelookup.AbstractSourceLookupDirector.launchConfigurationChanged(AbstractSourceLookupDirector.java:350)
+	at org.eclipse.debug.internal.core.LaunchManager$ConfigurationNotifier.run(LaunchManager.java:228)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.debug.internal.core.LaunchManager$ConfigurationNotifier.notify(LaunchManager.java:209)
+	at org.eclipse.debug.internal.core.LaunchManager.launchConfigurationChanged(LaunchManager.java:2141)
+	at org.eclipse.debug.internal.core.LaunchConfigurationWorkingCopy.writeNewFile(LaunchConfigurationWorkingCopy.java:380)
+	at org.eclipse.debug.internal.core.LaunchConfigurationWorkingCopy.doSave0(LaunchConfigurationWorkingCopy.java:246)
+	at org.eclipse.debug.internal.core.LaunchConfigurationWorkingCopy.doSave(LaunchConfigurationWorkingCopy.java:216)
+	at org.eclipse.debug.internal.core.LaunchConfigurationWorkingCopy.doSave(LaunchConfigurationWorkingCopy.java:170)
+	at org.eclipse.wst.server.core.internal.Server$8.run(Server.java:1710)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+!ENTRY org.eclipse.debug.core 4 120 2015-04-26 16:34:50.513
+!MESSAGE An exception occurred during launch configuration change notification.
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.jdt.launching.sourcelookup.containers.JavaSourceLookupParticipant.dispose(JavaSourceLookupParticipant.java:68)
+	at org.eclipse.debug.core.sourcelookup.AbstractSourceLookupDirector.dispose(AbstractSourceLookupDirector.java:216)
+	at org.eclipse.debug.core.sourcelookup.AbstractSourceLookupDirector.initializeDefaults(AbstractSourceLookupDirector.java:574)
+	at org.eclipse.debug.core.sourcelookup.AbstractSourceLookupDirector.launchConfigurationChanged(AbstractSourceLookupDirector.java:350)
+	at org.eclipse.debug.internal.core.LaunchManager$ConfigurationNotifier.run(LaunchManager.java:228)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.debug.internal.core.LaunchManager$ConfigurationNotifier.notify(LaunchManager.java:209)
+	at org.eclipse.debug.internal.core.LaunchManager.launchConfigurationChanged(LaunchManager.java:2141)
+	at org.eclipse.debug.internal.core.LaunchConfigurationWorkingCopy.writeNewFile(LaunchConfigurationWorkingCopy.java:380)
+	at org.eclipse.debug.internal.core.LaunchConfigurationWorkingCopy.doSave0(LaunchConfigurationWorkingCopy.java:246)
+	at org.eclipse.debug.internal.core.LaunchConfigurationWorkingCopy.doSave(LaunchConfigurationWorkingCopy.java:216)
+	at org.eclipse.debug.internal.core.LaunchConfigurationWorkingCopy.doSave(LaunchConfigurationWorkingCopy.java:170)
+	at org.eclipse.wst.server.core.internal.Server$8.run(Server.java:1710)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-04-26 16:35:25.828
+!MESSAGE Server watcher[Oracle WebLogic Server 12c (12.1.3) at localhost [web_domain]]:running Weblogic detected, validating...
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-04-26 16:35:29.829
+!MESSAGE JMX Connection created to WebLogic Server @:[service:jmx:t3://localhost:7001/jndi/weblogic.management.mbeanservers.domainruntime]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-04-26 16:35:34.540
+!MESSAGE Creating Deployment manager...
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-04-26 16:35:34.540
+!MESSAGE Elapsed time 4602ms
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-04-26 16:35:34.540
+!MESSAGE Deployment manager created :[Oracle WebLogic Server 12c (12.1.3) at localhost [web_domain] t3://localhost:7001]@18147832
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-04-26 16:44:15.791
+!MESSAGE Releasing deployment manager :[Oracle WebLogic Server 12c (12.1.3) at localhost [web_domain]]@18147832
+!SESSION 2015-04-26 19:48:14.540 -----------------------------------------------
+eclipse.buildId=4.3.2.M20140221-1700
+java.version=1.7.0_51
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86
+
+!ENTRY org.eclipse.egit.ui 2 0 2015-04-26 19:49:33.770
+!MESSAGE Warning: EGit couldn't detect the installation path "gitPrefix" of native Git. Hence EGit can't respect system level
+Git settings which might be configured in ${gitPrefix}/etc/gitconfig under the native Git installation directory.
+The most important of these settings is core.autocrlf. Git for Windows by default sets this parameter to true in
+this system level configuration. The Git installation location can be configured on the
+Team > Git > Configuration preference page's 'System Settings' tab.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.egit.ui 2 0 2015-04-26 19:49:33.817
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\dell'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-04-26 19:49:36.395
+!MESSAGE Started WebLogic Server Monitor [web_domain@localhost:7001, Version:12.1.3.0.0]
+
+!ENTRY oracle.eclipse.tools.weblogic 4 4 2015-04-26 19:49:38.349
+!MESSAGE Unable to find tools.jar within Java VM associated with target WebLogic runtime; features dependent on tools.jar may not function
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-04-26 19:55:59.526
+!MESSAGE Server watcher[Oracle WebLogic Server 12c (12.1.3) at localhost [web_domain]]:running Weblogic detected, validating...
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-04-26 19:56:06.505
+!MESSAGE JMX Connection created to WebLogic Server @:[service:jmx:t3://localhost:7001/jndi/weblogic.management.mbeanservers.domainruntime]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-04-26 19:56:13.404
+!MESSAGE Creating Deployment manager...
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-04-26 19:56:13.419
+!MESSAGE Elapsed time 6679ms
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-04-26 19:56:13.419
+!MESSAGE Deployment manager created :[Oracle WebLogic Server 12c (12.1.3) at localhost [web_domain] t3://localhost:7001]@7375030
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-04-26 19:56:15.813
+!MESSAGE Publishing beginning.
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-04-26 19:56:16.047
+!MESSAGE Module not changed:[com.learning.testProject]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-04-26 19:56:16.063
+!MESSAGE Total deleted modules: 0
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-04-26 19:56:16.859
+!MESSAGE Module Status: 
+-com.learning.testProject
+
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-04-26 19:56:16.937
+!MESSAGE ***dm.getAvailableModules (initModuleNameCache)
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-04-26 19:56:17.422
+!MESSAGE Status INFO: oracle.eclipse.tools.weblogic code=2000 ***dm.undeploy (undeploy) _auto_generated_ear_ null from targets [{Target=AdminServer, WebLogicTargetType=server, Name=_auto_generated_ear_}]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-04-26 19:56:19.639
+!MESSAGE Waiting on ProgressObject:@8563980
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-04-26 19:56:20.895
+!MESSAGE ProgressObject completed :@8563980
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-04-26 19:56:20.895
+!MESSAGE ***dm.getAvailableModules (initModuleNameCache)
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-04-26 19:56:20.926
+!MESSAGE Module _auto_generated_ear_ was undeployed sucessfully.
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-04-26 19:56:20.942
+!MESSAGE ***dm.getAvailableModules (initModuleNameCache)
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-04-26 19:56:20.957
+!MESSAGE ***dm.distribute (deploy) module _auto_generated_ear_
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-04-26 19:56:26.929
+!MESSAGE Waiting on ProgressObject:@13839002
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-04-26 19:56:27.724
+!MESSAGE ProgressObject completed :@13839002
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-04-26 19:56:27.732
+!MESSAGE _auto_generated_ear_ deployed successfully.
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-04-26 19:56:27.737
+!MESSAGE ***dm.start (startModule) _auto_generated_ear_
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-04-26 19:56:28.896
+!MESSAGE Waiting on ProgressObject:@32318270
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-04-26 19:56:29.047
+!MESSAGE ProgressObject completed :@32318270
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-04-26 19:56:29.052
+!MESSAGE Started _auto_generated_ear_
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-04-26 19:56:29.058
+!MESSAGE Module _auto_generated_ear_ deployed successfully.
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-04-26 19:56:29.064
+!MESSAGE Publishing finished.
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-04-26 20:31:52.570
+!MESSAGE Releasing deployment manager :[Oracle WebLogic Server 12c (12.1.3) at localhost [web_domain]]@7375030
+!SESSION 2015-05-04 13:42:40.325 -----------------------------------------------
+eclipse.buildId=4.3.2.M20140221-1700
+java.version=1.7.0_51
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-04 13:44:01.380
+!MESSAGE Started WebLogic Server Monitor [web_domain@localhost:7001, Version:12.1.3.0.0]
+
+!ENTRY org.eclipse.egit.ui 2 0 2015-05-04 13:44:02.538
+!MESSAGE Warning: EGit couldn't detect the installation path "gitPrefix" of native Git. Hence EGit can't respect system level
+Git settings which might be configured in ${gitPrefix}/etc/gitconfig under the native Git installation directory.
+The most important of these settings is core.autocrlf. Git for Windows by default sets this parameter to true in
+this system level configuration. The Git installation location can be configured on the
+Team > Git > Configuration preference page's 'System Settings' tab.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.egit.ui 2 0 2015-05-04 13:44:02.553
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\dell'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY oracle.eclipse.tools.weblogic 4 4 2015-05-04 13:44:03.297
+!MESSAGE Unable to find tools.jar within Java VM associated with target WebLogic runtime; features dependent on tools.jar may not function
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-04 13:46:12.061
+!MESSAGE Server watcher[Oracle WebLogic Server 12c (12.1.3) at localhost [web_domain]]:running Weblogic detected, validating...
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-04 13:46:18.706
+!MESSAGE JMX Connection created to WebLogic Server @:[service:jmx:t3://localhost:7001/jndi/weblogic.management.mbeanservers.domainruntime]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-04 13:46:26.894
+!MESSAGE Creating Deployment manager...
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-04 13:46:26.925
+!MESSAGE Elapsed time 7811ms
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-04 13:46:26.925
+!MESSAGE Deployment manager created :[Oracle WebLogic Server 12c (12.1.3) at localhost [web_domain] t3://localhost:7001]@19388807
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-04 13:46:28.286
+!MESSAGE Publishing beginning.
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-04 13:46:28.473
+!MESSAGE Module not changed:[com.learning.testProject]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-04 13:46:28.489
+!MESSAGE Total deleted modules: 0
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-04 13:46:29.768
+!MESSAGE Module Status: 
+-com.learning.testProject
+
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-04 13:46:29.863
+!MESSAGE ***dm.getAvailableModules (initModuleNameCache)
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-04 13:46:30.346
+!MESSAGE Status INFO: oracle.eclipse.tools.weblogic code=2000 ***dm.undeploy (undeploy) _auto_generated_ear_ null from targets [{Target=AdminServer, WebLogicTargetType=server, Name=_auto_generated_ear_}]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-04 13:46:32.109
+!MESSAGE Waiting on ProgressObject:@7259700
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-04 13:46:33.576
+!MESSAGE ProgressObject completed :@7259700
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-04 13:46:33.576
+!MESSAGE ***dm.getAvailableModules (initModuleNameCache)
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-04 13:46:33.607
+!MESSAGE Module _auto_generated_ear_ was undeployed sucessfully.
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-04 13:46:33.607
+!MESSAGE ***dm.getAvailableModules (initModuleNameCache)
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-04 13:46:33.622
+!MESSAGE ***dm.distribute (deploy) module _auto_generated_ear_
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-04 13:46:39.584
+!MESSAGE Waiting on ProgressObject:@6350870
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-04 13:46:40.426
+!MESSAGE ProgressObject completed :@6350870
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-04 13:46:40.434
+!MESSAGE _auto_generated_ear_ deployed successfully.
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-04 13:46:40.440
+!MESSAGE ***dm.start (startModule) _auto_generated_ear_
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-04 13:46:41.538
+!MESSAGE Waiting on ProgressObject:@18353092
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-04 13:46:41.680
+!MESSAGE ProgressObject completed :@18353092
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-04 13:46:41.687
+!MESSAGE Started _auto_generated_ear_
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-04 13:46:41.692
+!MESSAGE Module _auto_generated_ear_ deployed successfully.
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-04 13:46:41.698
+!MESSAGE Publishing finished.
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-04 14:06:41.853
+!MESSAGE Releasing deployment manager :[Oracle WebLogic Server 12c (12.1.3) at localhost [web_domain]]@19388807
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-04 14:09:22.452
+!MESSAGE Server watcher[Oracle WebLogic Server 12c (12.1.3) at localhost [web_domain]]:running Weblogic detected, validating...
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-04 14:09:26.783
+!MESSAGE JMX Connection created to WebLogic Server @:[service:jmx:t3://localhost:7001/jndi/weblogic.management.mbeanservers.domainruntime]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-04 14:09:32.834
+!MESSAGE Creating Deployment manager...
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-04 14:09:32.834
+!MESSAGE Elapsed time 5862ms
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-04 14:09:32.834
+!MESSAGE Deployment manager created :[Oracle WebLogic Server 12c (12.1.3) at localhost [web_domain] t3://localhost:7001]@4238667
+!SESSION 2015-05-04 16:30:07.525 -----------------------------------------------
+eclipse.buildId=4.3.2.M20140221-1700
+java.version=1.7.0_51
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86
+
+!ENTRY org.eclipse.core.resources 2 10035 2015-05-04 16:30:33.625
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.eclipse.jst.jsp.core 4 4 2015-05-04 16:30:58.843
+!MESSAGE A workspace crash was detected. The previous session did not exit normally. Not using saved taglib indexes.
+
+!ENTRY org.eclipse.egit.ui 2 0 2015-05-04 16:31:49.720
+!MESSAGE Warning: EGit couldn't detect the installation path "gitPrefix" of native Git. Hence EGit can't respect system level
+Git settings which might be configured in ${gitPrefix}/etc/gitconfig under the native Git installation directory.
+The most important of these settings is core.autocrlf. Git for Windows by default sets this parameter to true in
+this system level configuration. The Git installation location can be configured on the
+Team > Git > Configuration preference page's 'System Settings' tab.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.egit.ui 2 0 2015-05-04 16:31:49.816
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\dell'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-04 16:31:50.832
+!MESSAGE Started WebLogic Server Monitor [web_domain@localhost:7001, Version:12.1.3.0.0]
+
+!ENTRY oracle.eclipse.tools.weblogic 4 4 2015-05-04 16:31:53.679
+!MESSAGE Unable to find tools.jar within Java VM associated with target WebLogic runtime; features dependent on tools.jar may not function
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-04 16:34:21.250
+!MESSAGE Server watcher[Oracle WebLogic Server 12c (12.1.3) at localhost [web_domain]]:running Weblogic detected, validating...
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-04 16:34:29.666
+!MESSAGE JMX Connection created to WebLogic Server @:[service:jmx:t3://localhost:7001/jndi/weblogic.management.mbeanservers.domainruntime]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-04 16:34:36.976
+!MESSAGE Creating Deployment manager...
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-04 16:34:36.991
+!MESSAGE Elapsed time 6870ms
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-04 16:34:37.007
+!MESSAGE Deployment manager created :[Oracle WebLogic Server 12c (12.1.3) at localhost [web_domain] t3://localhost:7001]@19028781
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-04 16:34:38.468
+!MESSAGE Publishing beginning.
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-04 16:34:38.655
+!MESSAGE Module not changed:[com.learning.testProject]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-04 16:34:38.671
+!MESSAGE Total deleted modules: 0
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-04 16:34:38.860
+!MESSAGE Module Status: 
+-com.learning.testProject
+
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-04 16:34:38.876
+!MESSAGE ***dm.getAvailableModules (initModuleNameCache)
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-04 16:34:39.351
+!MESSAGE Status INFO: oracle.eclipse.tools.weblogic code=2000 ***dm.undeploy (undeploy) _auto_generated_ear_ null from targets [{Target=AdminServer, WebLogicTargetType=server, Name=_auto_generated_ear_}]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-04 16:34:41.253
+!MESSAGE Waiting on ProgressObject:@17192341
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-04 16:34:42.628
+!MESSAGE ProgressObject completed :@17192341
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-04 16:34:42.644
+!MESSAGE ***dm.getAvailableModules (initModuleNameCache)
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-04 16:34:42.675
+!MESSAGE Module _auto_generated_ear_ was undeployed sucessfully.
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-04 16:34:42.675
+!MESSAGE ***dm.getAvailableModules (initModuleNameCache)
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-04 16:34:42.690
+!MESSAGE ***dm.distribute (deploy) module _auto_generated_ear_
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-04 16:34:48.305
+!MESSAGE Waiting on ProgressObject:@28989013
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-04 16:34:49.072
+!MESSAGE ProgressObject completed :@28989013
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-04 16:34:49.088
+!MESSAGE _auto_generated_ear_ deployed successfully.
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-04 16:34:49.088
+!MESSAGE ***dm.start (startModule) _auto_generated_ear_
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-04 16:34:50.206
+!MESSAGE Waiting on ProgressObject:@7638308
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-04 16:34:50.474
+!MESSAGE ProgressObject completed :@7638308
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-04 16:34:50.474
+!MESSAGE Started _auto_generated_ear_
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-04 16:34:50.474
+!MESSAGE Module _auto_generated_ear_ deployed successfully.
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-04 16:34:50.489
+!MESSAGE Publishing finished.
+
+!ENTRY org.eclipse.jdt.ui 4 10001 2015-05-04 17:30:17.298
+!MESSAGE Internal Error
+!STACK 1
+Java Model Exception: Java Model Status [Unknown javadoc format for TABLOID [in MediaType [in PageAttributes$MediaType.class [in java.awt [in C:\Oracle\Middleware\Oracle_Home\oracle_common\jdk\jre\lib\rt.jar]]]]]
+	at org.eclipse.jdt.internal.core.JavadocContents.getFieldDoc(JavadocContents.java:130)
+	at org.eclipse.jdt.internal.core.BinaryField.getAttachedJavadoc(BinaryField.java:123)
+	at org.eclipse.jdt.internal.ui.text.javadoc.JavadocContentAccess2.getHTMLContent(JavadocContentAccess2.java:499)
+	at org.eclipse.jdt.internal.ui.text.java.ProposalInfo.extractJavadoc(ProposalInfo.java:93)
+	at org.eclipse.jdt.internal.ui.text.java.ProposalInfo.computeInfo(ProposalInfo.java:77)
+	at org.eclipse.jdt.internal.ui.text.java.ProposalInfo.getInfo(ProposalInfo.java:62)
+	at org.eclipse.jdt.internal.ui.text.java.AbstractJavaCompletionProposal.getAdditionalProposalInfo(AbstractJavaCompletionProposal.java:575)
+	at org.eclipse.jface.text.contentassist.AdditionalInfoController$3.run(AdditionalInfoController.java:106)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+!SUBENTRY 1 org.eclipse.jdt.core 4 1009 2015-05-04 17:30:17.323
+!MESSAGE Unknown javadoc format for TABLOID [in MediaType [in PageAttributes$MediaType.class [in java.awt [in C:\Oracle\Middleware\Oracle_Home\oracle_common\jdk\jre\lib\rt.jar]]]]
+
+!ENTRY org.eclipse.jdt.ui 4 10001 2015-05-04 17:30:18.009
+!MESSAGE Internal Error
+!STACK 1
+Java Model Exception: Java Model Status [Unknown javadoc format for A [in MediaType [in PageAttributes$MediaType.class [in java.awt [in C:\Oracle\Middleware\Oracle_Home\oracle_common\jdk\jre\lib\rt.jar]]]]]
+	at org.eclipse.jdt.internal.core.JavadocContents.getFieldDoc(JavadocContents.java:130)
+	at org.eclipse.jdt.internal.core.BinaryField.getAttachedJavadoc(BinaryField.java:123)
+	at org.eclipse.jdt.internal.ui.text.javadoc.JavadocContentAccess2.getHTMLContent(JavadocContentAccess2.java:499)
+	at org.eclipse.jdt.internal.ui.text.java.ProposalInfo.extractJavadoc(ProposalInfo.java:93)
+	at org.eclipse.jdt.internal.ui.text.java.ProposalInfo.computeInfo(ProposalInfo.java:77)
+	at org.eclipse.jdt.internal.ui.text.java.ProposalInfo.getInfo(ProposalInfo.java:62)
+	at org.eclipse.jdt.internal.ui.text.java.AbstractJavaCompletionProposal.getAdditionalProposalInfo(AbstractJavaCompletionProposal.java:575)
+	at org.eclipse.jface.text.contentassist.AdditionalInfoController$3.run(AdditionalInfoController.java:106)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+!SUBENTRY 1 org.eclipse.jdt.core 4 1009 2015-05-04 17:30:18.009
+!MESSAGE Unknown javadoc format for A [in MediaType [in PageAttributes$MediaType.class [in java.awt [in C:\Oracle\Middleware\Oracle_Home\oracle_common\jdk\jre\lib\rt.jar]]]]
+
+!ENTRY org.eclipse.jdt.ui 4 10001 2015-05-04 17:31:18.462
+!MESSAGE Internal Error
+!STACK 1
+Java Model Exception: Java Model Status [Unknown javadoc format for String {key=Ljava/lang/String;} [in String.class [in java.lang [in C:\Oracle\Middleware\Oracle_Home\oracle_common\jdk\jre\lib\rt.jar]]]]
+	at org.eclipse.jdt.internal.core.JavadocContents.getTypeDoc(JavadocContents.java:81)
+	at org.eclipse.jdt.internal.core.BinaryType.getAttachedJavadoc(BinaryType.java:998)
+	at org.eclipse.jdt.internal.ui.text.javadoc.JavadocContentAccess2.getHTMLContent(JavadocContentAccess2.java:499)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo(JavadocHover.java:689)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.internalGetHoverInfo(JavadocHover.java:607)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo2(JavadocHover.java:599)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:163)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:129)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:85)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:166)
+!SUBENTRY 1 org.eclipse.jdt.core 4 1009 2015-05-04 17:31:18.462
+!MESSAGE Unknown javadoc format for String {key=Ljava/lang/String;} [in String.class [in java.lang [in C:\Oracle\Middleware\Oracle_Home\oracle_common\jdk\jre\lib\rt.jar]]]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-04 17:32:42.164
+!MESSAGE Releasing deployment manager :[Oracle WebLogic Server 12c (12.1.3) at localhost [web_domain]]@19028781
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-04 17:35:35.647
+!MESSAGE Server watcher[Oracle WebLogic Server 12c (12.1.3) at localhost [web_domain]]:running Weblogic detected, validating...
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-04 17:35:38.732
+!MESSAGE JMX Connection created to WebLogic Server @:[service:jmx:t3://localhost:7001/jndi/weblogic.management.mbeanservers.domainruntime]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-04 17:35:48.374
+!MESSAGE Creating Deployment manager...
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-04 17:35:48.383
+!MESSAGE Elapsed time 9442ms
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-04 17:35:48.391
+!MESSAGE Deployment manager created :[Oracle WebLogic Server 12c (12.1.3) at localhost [web_domain] t3://localhost:7001]@31137377
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-04 17:35:49.106
+!MESSAGE Publishing beginning.
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-04 17:35:49.319
+!MESSAGE Module changed:[com.learning.testProject]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-04 17:35:49.334
+!MESSAGE Total deleted modules: 0
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-04 17:35:49.500
+!MESSAGE Module changed:[com.learning.testProject]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-04 17:35:49.515
+!MESSAGE Module Status: 
+-com.learning.testProject (change) (redeploy)
+
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-04 17:35:49.531
+!MESSAGE ***dm.getAvailableModules (initModuleNameCache)
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-04 17:35:49.823
+!MESSAGE Status INFO: oracle.eclipse.tools.weblogic code=2000 ***dm.undeploy (undeploy) _auto_generated_ear_ null from targets [{Target=AdminServer, WebLogicTargetType=server, Name=_auto_generated_ear_}]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-04 17:35:51.471
+!MESSAGE Waiting on ProgressObject:@1391406
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-04 17:35:52.688
+!MESSAGE ProgressObject completed :@1391406
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-04 17:35:52.704
+!MESSAGE ***dm.getAvailableModules (initModuleNameCache)
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-04 17:35:52.735
+!MESSAGE Module _auto_generated_ear_ was undeployed sucessfully.
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-04 17:35:52.735
+!MESSAGE ***dm.getAvailableModules (initModuleNameCache)
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-04 17:35:52.760
+!MESSAGE ***dm.distribute (deploy) module _auto_generated_ear_
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-04 17:36:00.930
+!MESSAGE Waiting on ProgressObject:@4517495
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-04 17:36:02.621
+!MESSAGE ProgressObject completed :@4517495
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-04 17:36:02.642
+!MESSAGE _auto_generated_ear_ deployed successfully.
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-04 17:36:02.652
+!MESSAGE ***dm.start (startModule) _auto_generated_ear_
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-04 17:36:04.781
+!MESSAGE Waiting on ProgressObject:@24443763
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-04 17:36:05.685
+!MESSAGE ProgressObject completed :@24443763
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-04 17:36:05.695
+!MESSAGE Started _auto_generated_ear_
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-04 17:36:05.706
+!MESSAGE Module _auto_generated_ear_ deployed successfully.
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-04 17:36:05.715
+!MESSAGE Publishing finished.
+
+!ENTRY org.eclipse.jface 2 0 2015-05-04 17:49:44.117
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2015-05-04 17:49:44.117
+!MESSAGE A conflict occurred for CTRL+I:
+Binding(CTRL+I,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.indent,Correct Indentation,
+		Corrects the indentation of the selected lines,
+		Category(org.eclipse.jdt.ui.category.source,Source,Java Source Actions,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@97e1e2,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.jdt.ui.javaEditorScope,,,system)
+Binding(CTRL+I,
+	ParameterizedCommand(Command(org.eclipse.wst.sse.ui.format.active.elements,Format Active Elements,
+		Format active elements,
+		Category(org.eclipse.ui.category.edit,Edit,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@d2243f,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.wst.sse.ui.structuredTextEditorScope,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2015-05-04 17:49:44.117
+!MESSAGE A conflict occurred for CTRL+SHIFT+F:
+Binding(CTRL+SHIFT+F,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.format,Format,
+		Format the selected text,
+		Category(org.eclipse.jdt.ui.category.source,Source,Java Source Actions,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@16ee4bd,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.jdt.ui.javaEditorScope,,,system)
+Binding(CTRL+SHIFT+F,
+	ParameterizedCommand(Command(org.eclipse.wst.sse.ui.format.document,Format,
+		Format selection,
+		Category(org.eclipse.ui.category.edit,Edit,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@2d405a,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.wst.sse.ui.structuredTextEditorScope,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2015-05-04 17:49:44.117
+!MESSAGE A conflict occurred for ALT+SHIFT+ARROW_UP:
+Binding(ALT+SHIFT+ARROW_UP,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.select.enclosing,Select Enclosing Element,
+		Expand selection to include enclosing element,
+		Category(org.eclipse.ui.category.edit,Edit,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@16b601c,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.jdt.ui.javaEditorScope,,,system)
+Binding(ALT+SHIFT+ARROW_UP,
+	ParameterizedCommand(Command(org.eclipse.wst.sse.ui.structure.select.enclosing,Select Enclosing Element,
+		Expand selection to include enclosing element,
+		Category(org.eclipse.ui.category.edit,Edit,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@7db501,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.wst.sse.ui.structuredTextEditorScope,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2015-05-04 17:49:44.117
+!MESSAGE A conflict occurred for CTRL+SHIFT+/:
+Binding(CTRL+SHIFT+/,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.add.block.comment,Add Block Comment,
+		Enclose the selection with a block comment,
+		Category(org.eclipse.jdt.ui.category.source,Source,Java Source Actions,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@730142,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.jdt.ui.javaEditorScope,,,system)
+Binding(CTRL+SHIFT+/,
+	ParameterizedCommand(Command(org.eclipse.wst.sse.ui.add.block.comment,Add Block Comment,
+		Add Block Comment,
+		Category(org.eclipse.ui.category.edit,Edit,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@1a57227,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.wst.sse.ui.structuredTextEditorScope,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2015-05-04 17:49:44.117
+!MESSAGE A conflict occurred for CTRL+O:
+Binding(CTRL+O,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.show.outline,Quick Outline,
+		Show the quick outline for the editor input,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@57a3ac,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.jdt.ui.javaEditorScope,,,system)
+Binding(CTRL+O,
+	ParameterizedCommand(Command(org.eclipse.wst.sse.ui.quick_outline,Quick Outline,
+		Show the quick outline for the editor input,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@1ba7995,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.wst.sse.ui.structuredTextEditorScope,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2015-05-04 17:49:44.117
+!MESSAGE A conflict occurred for CTRL+SHIFT+P:
+Binding(CTRL+SHIFT+P,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.goto.matching.bracket,Go to Matching Bracket,
+		Moves the cursor to the matching bracket,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@1845b6d,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.jdt.ui.javaEditorScope,,,system)
+Binding(CTRL+SHIFT+P,
+	ParameterizedCommand(Command(org.eclipse.m2e.core.ui.command.addPlugin,Add Maven Plugin,
+		Add Maven Plugin,
+		Category(org.eclipse.ui.category.edit,Edit,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@8e7aea,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.core.runtime.xml,,,system)
+Binding(CTRL+SHIFT+P,
+	ParameterizedCommand(Command(org.eclipse.wst.sse.ui.goto.matching.bracket,Matching Character,
+		Go to Matching Character,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@1e47d66,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.wst.sse.ui.structuredTextEditorScope,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2015-05-04 17:49:44.117
+!MESSAGE A conflict occurred for CTRL+SHIFT+ARROW_UP:
+Binding(CTRL+SHIFT+ARROW_UP,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.goto.previous.member,Go to Previous Member,
+		Move the caret to the previous member of the compilation unit,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@27bddd,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.jdt.ui.javaEditorScope,,,system)
+Binding(CTRL+SHIFT+ARROW_UP,
+	ParameterizedCommand(Command(org.eclipse.wst.xml.ui.previousSibling,Previous Sibling,
+		Go to Previous Sibling,
+		Category(org.eclipse.ui.category.edit,Edit,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@13be970,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.wst.sse.ui.structuredTextEditorScope,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2015-05-04 17:49:44.117
+!MESSAGE A conflict occurred for ALT+SHIFT+ARROW_DOWN:
+Binding(ALT+SHIFT+ARROW_DOWN,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.select.last,Restore Last Selection,
+		Restore last selection,
+		Category(org.eclipse.ui.category.edit,Edit,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@121f945,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.jdt.ui.javaEditorScope,,,system)
+Binding(ALT+SHIFT+ARROW_DOWN,
+	ParameterizedCommand(Command(org.eclipse.wst.sse.ui.structure.select.last,Restore Last Selection,
+		Restore last selection,
+		Category(org.eclipse.ui.category.edit,Edit,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@46d899,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.wst.sse.ui.structuredTextEditorScope,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2015-05-04 17:49:44.117
+!MESSAGE A conflict occurred for CTRL+SHIFT+C:
+Binding(CTRL+SHIFT+C,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.toggle.comment,Toggle Comment,
+		Toggle comment the selected lines,
+		Category(org.eclipse.jdt.ui.category.source,Source,Java Source Actions,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@1746238,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.jdt.ui.javaEditorScope,,,system)
+Binding(CTRL+SHIFT+C,
+	ParameterizedCommand(Command(org.eclipse.wst.sse.ui.toggle.comment,Toggle Comment,
+		Toggle Comment,
+		Category(org.eclipse.ui.category.edit,Edit,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@1859d0a,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.wst.sse.ui.structuredTextEditorScope,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2015-05-04 17:49:44.117
+!MESSAGE A conflict occurred for ALT+SHIFT+ARROW_RIGHT:
+Binding(ALT+SHIFT+ARROW_RIGHT,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.select.next,Select Next Element,
+		Expand selection to include next sibling,
+		Category(org.eclipse.ui.category.edit,Edit,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@1dc5275,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.jdt.ui.javaEditorScope,,,system)
+Binding(ALT+SHIFT+ARROW_RIGHT,
+	ParameterizedCommand(Command(org.eclipse.wst.sse.ui.structure.select.next,Select Next Element,
+		Expand selection to include next sibling,
+		Category(org.eclipse.ui.category.edit,Edit,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@131cc29,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.wst.sse.ui.structuredTextEditorScope,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2015-05-04 17:49:44.117
+!MESSAGE A conflict occurred for CTRL+SHIFT+\:
+Binding(CTRL+SHIFT+\,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.remove.block.comment,Remove Block Comment,
+		Remove the block comment enclosing the selection,
+		Category(org.eclipse.jdt.ui.category.source,Source,Java Source Actions,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@1a990b1,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.jdt.ui.javaEditorScope,,,system)
+Binding(CTRL+SHIFT+\,
+	ParameterizedCommand(Command(org.eclipse.wst.sse.ui.remove.block.comment,Remove Block Comment,
+		Remove Block Comment,
+		Category(org.eclipse.ui.category.edit,Edit,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@1342542,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.wst.sse.ui.structuredTextEditorScope,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2015-05-04 17:49:44.117
+!MESSAGE A conflict occurred for CTRL+SHIFT+ARROW_DOWN:
+Binding(CTRL+SHIFT+ARROW_DOWN,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.goto.next.member,Go to Next Member,
+		Move the caret to the next member of the compilation unit,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@15a5865,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.jdt.ui.javaEditorScope,,,system)
+Binding(CTRL+SHIFT+ARROW_DOWN,
+	ParameterizedCommand(Command(org.eclipse.wst.xml.ui.nextSibling,Next Sibling,
+		Go to Next Sibling,
+		Category(org.eclipse.ui.category.edit,Edit,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@16c93,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.wst.sse.ui.structuredTextEditorScope,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2015-05-04 17:49:44.117
+!MESSAGE A conflict occurred for ALT+SHIFT+ARROW_LEFT:
+Binding(ALT+SHIFT+ARROW_LEFT,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.select.previous,Select Previous Element,
+		Expand selection to include previous sibling,
+		Category(org.eclipse.ui.category.edit,Edit,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@6155bc,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.jdt.ui.javaEditorScope,,,system)
+Binding(ALT+SHIFT+ARROW_LEFT,
+	ParameterizedCommand(Command(org.eclipse.wst.sse.ui.structure.select.previous,Select Previous Element,
+		Expand selection to include previous sibling,
+		Category(org.eclipse.ui.category.edit,Edit,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@1f36fa7,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.wst.sse.ui.structuredTextEditorScope,,,system)
