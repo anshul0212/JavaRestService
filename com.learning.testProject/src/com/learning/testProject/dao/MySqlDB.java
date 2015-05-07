@@ -1,5 +1,7 @@
 package com.learning.testProject.dao;
 
+import java.sql.Connection;
+
 import javax.naming.*;
 import javax.sql.*;
 
@@ -29,5 +31,12 @@ public class MySqlDB {
 			e.printStackTrace();
 		}
 		return mySqlDataSource;
+	}
+	
+	protected static Connection getMySqlConnection() throws Exception
+	{
+		Connection conn = null;
+		conn = MySqlDB.getMySqlDBCon().getConnection();
+		return conn;
 	}
 }

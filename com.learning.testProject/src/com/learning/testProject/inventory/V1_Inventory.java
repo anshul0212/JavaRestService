@@ -3,6 +3,7 @@ package com.learning.testProject.inventory;
 import javax.ws.*;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
 
 import org.codehaus.jettison.json.JSONArray;
 
@@ -16,29 +17,23 @@ public class V1_Inventory {
 	
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
-	public String getInventory() throws Exception
+	public Response getInventory() throws Exception
 	{
 		PreparedStatement query = null;
 		Connection conn = null;
 		JSONArray json = new JSONArray();
 		String returnString = null;
-		
+		Response response = null;
 		try
 		{
-			conn = MySqlDB.getMySqlDBCon().getConnection();
-			query = conn.prepareStatement("select * from PC_Parts");
 			
-			ResultSet rs = query.executeQuery();
-			
-			ToJSON toJson = new ToJSON();
-			json = toJson.toJSONArray(rs);
 			returnString = json.toString();
 			query.close();
+			response = Response.ok(returnString).build();
 			
 		}
 		catch(Exception e)
 		{
-			returnString = "[{Exception:catch}]";
 			e.printStackTrace();
 		}
 		finally
@@ -46,7 +41,7 @@ public class V1_Inventory {
 			if(conn != null)
 				conn.close();		
 		}
-		return returnString;
+		return response;
 	}
 
 }

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;com.learning.testProject/WebContent/WEB-INF/classes/ESAPI_en_US.properties&apos; to &apos;ESAPI.properties&apos;" description="Rename resource &apos;ESAPI_en_US.properties&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="WebContent/WEB-INF/classes/ESAPI_en_US.properties" name="ESAPI.properties" stamp="1431001806538" updateReferences="true"/>
+</session>

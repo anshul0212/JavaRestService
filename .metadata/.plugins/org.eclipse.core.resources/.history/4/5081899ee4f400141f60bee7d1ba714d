@@ -1,0 +1,10 @@
+package com.learning.testProject.dao;
+
+public class MySqlDBWrapper extends MySqlDB
+{
+	public getBrandDetails(String brand)
+	{
+		
+	}
+	
+}

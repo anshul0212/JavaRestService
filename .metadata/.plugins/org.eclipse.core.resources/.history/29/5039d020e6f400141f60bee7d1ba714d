@@ -1,0 +1,26 @@
+package com.learning.testProject.inventory;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+
+import javax.ws.rs.Path;
+import javax.ws.rs.GET;
+import javax.ws.rs.Produces;
+import javax.ws.rs.QueryParam;
+import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
+
+import org.codehaus.jettison.json.JSONArray;
+
+import com.learning.testProject.dao.MySqlDB;
+import com.learning.testProject.util.ToJSON;
+
+@Path("/v2/inventory")
+public class V2_Inventory {
+
+	public Response getInventory throws Exception
+	{
+		
+	}
+}

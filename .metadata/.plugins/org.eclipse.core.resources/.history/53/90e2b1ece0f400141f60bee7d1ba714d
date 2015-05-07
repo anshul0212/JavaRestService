@@ -1,0 +1,5 @@
+package com.learning.testProject.dao;
+
+public class MySqlDBWrapper {
+
+}

@@ -3845,3 +3845,675 @@ Java Model Exception: Java Model Status [E:\EduForAll\oracleWLEclipseWS\com.lear
 
 !ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-06 23:33:46.362
 !MESSAGE Publishing finished.
+
+!ENTRY org.eclipse.jdt.ui 4 10001 2015-05-07 17:22:29.431
+!MESSAGE Internal Error
+!STACK 1
+Java Model Exception: Java Model Status [Unknown javadoc format for String {key=Ljava/lang/String;} [in String.class [in java.lang [in C:\Oracle\Middleware\Oracle_Home\oracle_common\jdk\jre\lib\rt.jar]]]]
+	at org.eclipse.jdt.internal.core.JavadocContents.getTypeDoc(JavadocContents.java:81)
+	at org.eclipse.jdt.internal.core.BinaryType.getAttachedJavadoc(BinaryType.java:998)
+	at org.eclipse.jdt.internal.ui.text.javadoc.JavadocContentAccess2.getHTMLContent(JavadocContentAccess2.java:499)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo(JavadocHover.java:689)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.internalGetHoverInfo(JavadocHover.java:607)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo2(JavadocHover.java:599)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:163)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:129)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:85)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:166)
+!SUBENTRY 1 org.eclipse.jdt.core 4 1009 2015-05-07 17:22:29.431
+!MESSAGE Unknown javadoc format for String {key=Ljava/lang/String;} [in String.class [in java.lang [in C:\Oracle\Middleware\Oracle_Home\oracle_common\jdk\jre\lib\rt.jar]]]
+
+!ENTRY org.eclipse.jdt.ui 4 10001 2015-05-07 17:23:23.484
+!MESSAGE Internal Error
+!STACK 1
+Java Model Exception: Java Model Status [Unknown javadoc format for Exception {key=Ljava/lang/Exception;} [in Exception.class [in java.lang [in C:\Oracle\Middleware\Oracle_Home\oracle_common\jdk\jre\lib\rt.jar]]]]
+	at org.eclipse.jdt.internal.core.JavadocContents.getTypeDoc(JavadocContents.java:81)
+	at org.eclipse.jdt.internal.core.BinaryType.getAttachedJavadoc(BinaryType.java:998)
+	at org.eclipse.jdt.internal.ui.text.javadoc.JavadocContentAccess2.getHTMLContent(JavadocContentAccess2.java:499)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo(JavadocHover.java:689)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.internalGetHoverInfo(JavadocHover.java:607)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo2(JavadocHover.java:599)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:163)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:129)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:85)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:166)
+!SUBENTRY 1 org.eclipse.jdt.core 4 1009 2015-05-07 17:23:23.484
+!MESSAGE Unknown javadoc format for Exception {key=Ljava/lang/Exception;} [in Exception.class [in java.lang [in C:\Oracle\Middleware\Oracle_Home\oracle_common\jdk\jre\lib\rt.jar]]]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-07 17:25:03.893
+!MESSAGE Releasing deployment manager :[Oracle WebLogic Server 12c (12.1.3) at localhost [web_domain]]@26165966
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-07 17:27:40.064
+!MESSAGE Server watcher[Oracle WebLogic Server 12c (12.1.3) at localhost [web_domain]]:running Weblogic detected, validating...
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-07 17:27:46.559
+!MESSAGE JMX Connection created to WebLogic Server @:[service:jmx:t3://localhost:7001/jndi/weblogic.management.mbeanservers.domainruntime]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-07 17:28:30.852
+!MESSAGE Creating Deployment manager...
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-07 17:28:30.858
+!MESSAGE Elapsed time 44004ms
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-07 17:28:30.864
+!MESSAGE Deployment manager created :[Oracle WebLogic Server 12c (12.1.3) at localhost [web_domain] t3://localhost:7001]@25327225
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-07 17:28:32.673
+!MESSAGE Publishing beginning.
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-07 17:28:32.720
+!MESSAGE Module changed:[com.learning.testProject]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-07 17:28:32.727
+!MESSAGE Total deleted modules: 0
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-07 17:28:32.793
+!MESSAGE Module changed:[com.learning.testProject]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-07 17:28:32.799
+!MESSAGE Module Status: 
+-com.learning.testProject (change) (redeploy)
+
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-07 17:28:32.812
+!MESSAGE ***dm.getAvailableModules (initModuleNameCache)
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-07 17:28:33.219
+!MESSAGE Status INFO: oracle.eclipse.tools.weblogic code=2000 ***dm.undeploy (undeploy) _auto_generated_ear_ null from targets [{Target=AdminServer, WebLogicTargetType=server, Name=_auto_generated_ear_}]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-07 17:28:35.085
+!MESSAGE Waiting on ProgressObject:@2989894
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-07 17:28:36.463
+!MESSAGE ProgressObject completed :@2989894
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-07 17:28:36.472
+!MESSAGE ***dm.getAvailableModules (initModuleNameCache)
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-07 17:28:36.497
+!MESSAGE Module _auto_generated_ear_ was undeployed sucessfully.
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-07 17:28:36.502
+!MESSAGE ***dm.getAvailableModules (initModuleNameCache)
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-07 17:28:36.519
+!MESSAGE ***dm.distribute (deploy) module _auto_generated_ear_
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-07 17:28:37.723
+!MESSAGE Waiting on ProgressObject:@16860090
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-07 17:28:39.333
+!MESSAGE ProgressObject completed :@16860090
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-07 17:28:39.341
+!MESSAGE _auto_generated_ear_ deployed successfully.
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-07 17:28:39.347
+!MESSAGE ***dm.start (startModule) _auto_generated_ear_
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-07 17:28:40.646
+!MESSAGE Waiting on ProgressObject:@13934640
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-07 17:28:41.700
+!MESSAGE ProgressObject completed :@13934640
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-07 17:28:41.712
+!MESSAGE Started _auto_generated_ear_
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-07 17:28:41.718
+!MESSAGE Module _auto_generated_ear_ deployed successfully.
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-07 17:28:41.750
+!MESSAGE Publishing finished.
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-07 17:56:31.540
+!MESSAGE Publishing beginning.
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-07 17:56:31.845
+!MESSAGE Module changed:[com.learning.testProject]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-07 17:56:31.863
+!MESSAGE Total deleted modules: 0
+
+!ENTRY oracle.eclipse.tools.weblogic 4 0 2015-05-07 17:56:31.944
+!MESSAGE Error(s) found in module 'com.learning.testProject'. Publish was cancelled. See "Problems" view for details.
+!SUBENTRY 1 oracle.eclipse.tools.weblogic 4 4000 2015-05-07 17:56:31.944
+!MESSAGE Project 'com.learning.testProject' is missing required library: 'WebContent/WEB-INF/lib/antisamy-bin.1.2.jar' at com.learning.testProject
+!SUBENTRY 1 oracle.eclipse.tools.weblogic 4 4000 2015-05-07 17:56:31.944
+!MESSAGE Project 'com.learning.testProject' is missing required library: 'WebContent/WEB-INF/lib/owasp-esapi-full-java-1.4.jar' at com.learning.testProject
+!SUBENTRY 1 oracle.eclipse.tools.weblogic 4 4000 2015-05-07 17:56:31.944
+!MESSAGE The project cannot be built until build path errors are resolved at com.learning.testProject
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-07 17:57:19.451
+!MESSAGE Publishing beginning.
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-07 17:57:19.487
+!MESSAGE Module changed:[com.learning.testProject]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-07 17:57:19.494
+!MESSAGE Total deleted modules: 0
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-07 17:57:19.658
+!MESSAGE Module changed:[com.learning.testProject]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-07 17:57:19.663
+!MESSAGE Module Status: 
+-com.learning.testProject (change) (redeploy)
+
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-07 17:57:19.743
+!MESSAGE Status INFO: oracle.eclipse.tools.weblogic code=2000 ***dm.undeploy (undeploy) _auto_generated_ear_ null from targets [{Target=AdminServer, WebLogicTargetType=server, Name=_auto_generated_ear_}]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-07 17:57:23.381
+!MESSAGE Waiting on ProgressObject:@12375726
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-07 17:57:24.704
+!MESSAGE ProgressObject completed :@12375726
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-07 17:57:24.713
+!MESSAGE ***dm.getAvailableModules (initModuleNameCache)
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-07 17:57:24.735
+!MESSAGE Module _auto_generated_ear_ was undeployed sucessfully.
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-07 17:57:24.741
+!MESSAGE ***dm.getAvailableModules (initModuleNameCache)
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-07 17:57:24.800
+!MESSAGE ***dm.distribute (deploy) module _auto_generated_ear_
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-07 17:57:27.310
+!MESSAGE Waiting on ProgressObject:@15023194
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-07 17:57:28.881
+!MESSAGE ProgressObject completed :@15023194
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-07 17:57:28.894
+!MESSAGE _auto_generated_ear_ deployed successfully.
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-07 17:57:28.901
+!MESSAGE ***dm.start (startModule) _auto_generated_ear_
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-07 17:57:30.617
+!MESSAGE Waiting on ProgressObject:@7196114
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-07 17:57:31.967
+!MESSAGE ProgressObject completed :@7196114
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-07 17:57:31.982
+!MESSAGE Started _auto_generated_ear_
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-07 17:57:31.988
+!MESSAGE Module _auto_generated_ear_ deployed successfully.
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-07 17:57:31.994
+!MESSAGE Publishing finished.
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-07 18:00:22.292
+!MESSAGE Releasing deployment manager :[Oracle WebLogic Server 12c (12.1.3) at localhost [web_domain]]@25327225
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-07 18:01:31.614
+!MESSAGE Server watcher[Oracle WebLogic Server 12c (12.1.3) at localhost [web_domain]]:running Weblogic detected, validating...
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-07 18:01:36.766
+!MESSAGE JMX Connection created to WebLogic Server @:[service:jmx:t3://localhost:7001/jndi/weblogic.management.mbeanservers.domainruntime]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-07 18:01:43.678
+!MESSAGE Creating Deployment manager...
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-07 18:01:43.687
+!MESSAGE Elapsed time 6810ms
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-07 18:01:43.696
+!MESSAGE Deployment manager created :[Oracle WebLogic Server 12c (12.1.3) at localhost [web_domain] t3://localhost:7001]@15051646
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-07 18:01:45.118
+!MESSAGE Publishing beginning.
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-07 18:01:45.141
+!MESSAGE Module changed:[com.learning.testProject]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-07 18:01:45.150
+!MESSAGE Total deleted modules: 0
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-07 18:01:45.246
+!MESSAGE Module changed:[com.learning.testProject]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-07 18:01:45.251
+!MESSAGE Module Status: 
+-com.learning.testProject (change) (redeploy)
+
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-07 18:01:45.264
+!MESSAGE ***dm.getAvailableModules (initModuleNameCache)
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-07 18:01:46.200
+!MESSAGE Status INFO: oracle.eclipse.tools.weblogic code=2000 ***dm.undeploy (undeploy) _auto_generated_ear_ null from targets [{Target=AdminServer, WebLogicTargetType=server, Name=_auto_generated_ear_}]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-07 18:01:47.444
+!MESSAGE Waiting on ProgressObject:@9753783
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-07 18:01:47.922
+!MESSAGE ProgressObject completed :@9753783
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-07 18:01:47.931
+!MESSAGE ***dm.getAvailableModules (initModuleNameCache)
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-07 18:01:47.953
+!MESSAGE Module _auto_generated_ear_ was undeployed sucessfully.
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-07 18:01:47.959
+!MESSAGE ***dm.getAvailableModules (initModuleNameCache)
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-07 18:01:47.976
+!MESSAGE ***dm.distribute (deploy) module _auto_generated_ear_
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-07 18:01:49.533
+!MESSAGE Waiting on ProgressObject:@17629114
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-07 18:01:50.658
+!MESSAGE ProgressObject completed :@17629114
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-07 18:01:50.697
+!MESSAGE _auto_generated_ear_ deployed successfully.
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-07 18:01:50.703
+!MESSAGE ***dm.start (startModule) _auto_generated_ear_
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-07 18:01:52.545
+!MESSAGE Waiting on ProgressObject:@16392
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-07 18:01:53.539
+!MESSAGE ProgressObject completed :@16392
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-07 18:01:53.549
+!MESSAGE Started _auto_generated_ear_
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-07 18:01:53.557
+!MESSAGE Module _auto_generated_ear_ deployed successfully.
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-07 18:01:53.563
+!MESSAGE Publishing finished.
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-07 18:03:55.408
+!MESSAGE Publishing beginning.
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-07 18:03:55.416
+!MESSAGE Module not changed:[com.learning.testProject]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-07 18:03:55.424
+!MESSAGE Total deleted modules: 0
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-07 18:04:11.546
+!MESSAGE Publishing beginning.
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-07 18:04:11.554
+!MESSAGE Module not changed:[com.learning.testProject]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-07 18:04:11.561
+!MESSAGE Total deleted modules: 0
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-07 18:06:23.777
+!MESSAGE Publishing beginning.
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-07 18:06:23.785
+!MESSAGE Module changed:[com.learning.testProject]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-07 18:06:23.793
+!MESSAGE Total deleted modules: 0
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-07 18:06:23.833
+!MESSAGE Module changed:[com.learning.testProject]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-07 18:06:23.839
+!MESSAGE Module Status: 
+-com.learning.testProject (change) (redeploy)
+
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-07 18:06:23.852
+!MESSAGE Status INFO: oracle.eclipse.tools.weblogic code=2000 ***dm.undeploy (undeploy) _auto_generated_ear_ null from targets [{Target=AdminServer, WebLogicTargetType=server, Name=_auto_generated_ear_}]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-07 18:06:25.335
+!MESSAGE Waiting on ProgressObject:@11448930
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-07 18:06:25.507
+!MESSAGE ProgressObject completed :@11448930
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-07 18:06:25.515
+!MESSAGE ***dm.getAvailableModules (initModuleNameCache)
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-07 18:06:25.537
+!MESSAGE Module _auto_generated_ear_ was undeployed sucessfully.
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-07 18:06:25.543
+!MESSAGE ***dm.getAvailableModules (initModuleNameCache)
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-07 18:06:25.561
+!MESSAGE ***dm.distribute (deploy) module _auto_generated_ear_
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-07 18:06:52.063
+!MESSAGE Waiting on ProgressObject:@3957327
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-07 18:06:52.985
+!MESSAGE ProgressObject completed :@3957327
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-07 18:06:52.994
+!MESSAGE _auto_generated_ear_ deployed successfully.
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-07 18:06:52.999
+!MESSAGE ***dm.start (startModule) _auto_generated_ear_
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-07 18:06:54.226
+!MESSAGE Waiting on ProgressObject:@24346557
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-07 18:06:54.823
+!MESSAGE ProgressObject completed :@24346557
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-07 18:06:54.829
+!MESSAGE Started _auto_generated_ear_
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-07 18:06:54.835
+!MESSAGE Module _auto_generated_ear_ deployed successfully.
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-07 18:06:54.841
+!MESSAGE Publishing finished.
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-07 19:47:38.904
+!MESSAGE Server watcher[Oracle WebLogic Server 12c (12.1.3) at localhost [web_domain]]:running Weblogic detected, validating...
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-07 19:47:38.972
+!MESSAGE Releasing deployment manager :[Oracle WebLogic Server 12c (12.1.3) at localhost [web_domain]]@15051646
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-07 19:47:39.074
+!MESSAGE JMX Connection created to WebLogic Server @:[service:jmx:t3://localhost:7001/jndi/weblogic.management.mbeanservers.domainruntime]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-07 19:47:55.183
+!MESSAGE Creating Deployment manager...
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-07 19:47:55.189
+!MESSAGE Elapsed time 16070ms
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-07 19:47:55.194
+!MESSAGE Deployment manager created :[Oracle WebLogic Server 12c (12.1.3) at localhost [web_domain] t3://localhost:7001]@26345033
+
+!ENTRY org.eclipse.jdt.ui 4 10001 2015-05-07 23:08:31.767
+!MESSAGE Internal Error
+!STACK 1
+Java Model Exception: Java Model Status [Unknown javadoc format for prepareStatement(java.lang.String) {key=Ljava/sql/Connection;.prepareStatement(Ljava/lang/String;)Ljava/sql/PreparedStatement;|Ljava/sql/SQLException;} [in Connection [in Connection.class [in java.sql [in C:\Oracle\Middleware\Oracle_Home\oracle_common\jdk\jre\lib\rt.jar]]]]]
+	at org.eclipse.jdt.internal.core.JavadocContents.getMethodDoc(JavadocContents.java:158)
+	at org.eclipse.jdt.internal.core.BinaryMethod.getAttachedJavadoc(BinaryMethod.java:681)
+	at org.eclipse.jdt.internal.core.ResolvedBinaryMethod.getAttachedJavadoc(ResolvedBinaryMethod.java:1)
+	at org.eclipse.jdt.internal.ui.text.javadoc.JavadocContentAccess2.getHTMLContent(JavadocContentAccess2.java:499)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo(JavadocHover.java:689)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.internalGetHoverInfo(JavadocHover.java:607)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo2(JavadocHover.java:599)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:163)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:129)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:85)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:166)
+!SUBENTRY 1 org.eclipse.jdt.core 4 1009 2015-05-07 23:08:31.769
+!MESSAGE Unknown javadoc format for prepareStatement(java.lang.String) {key=Ljava/sql/Connection;.prepareStatement(Ljava/lang/String;)Ljava/sql/PreparedStatement;|Ljava/sql/SQLException;} [in Connection [in Connection.class [in java.sql [in C:\Oracle\Middleware\Oracle_Home\oracle_common\jdk\jre\lib\rt.jar]]]]
+
+!ENTRY org.eclipse.jdt.ui 4 10001 2015-05-07 23:08:41.555
+!MESSAGE Internal Error
+!STACK 1
+Java Model Exception: Java Model Status [Unknown javadoc format for executeQuery() {key=Ljava/sql/PreparedStatement;.executeQuery()Ljava/sql/ResultSet;|Ljava/sql/SQLException;} [in PreparedStatement [in PreparedStatement.class [in java.sql [in C:\Oracle\Middleware\Oracle_Home\oracle_common\jdk\jre\lib\rt.jar]]]]]
+	at org.eclipse.jdt.internal.core.JavadocContents.getMethodDoc(JavadocContents.java:158)
+	at org.eclipse.jdt.internal.core.BinaryMethod.getAttachedJavadoc(BinaryMethod.java:681)
+	at org.eclipse.jdt.internal.core.ResolvedBinaryMethod.getAttachedJavadoc(ResolvedBinaryMethod.java:1)
+	at org.eclipse.jdt.internal.ui.text.javadoc.JavadocContentAccess2.getHTMLContent(JavadocContentAccess2.java:499)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo(JavadocHover.java:689)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.internalGetHoverInfo(JavadocHover.java:607)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo2(JavadocHover.java:599)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:163)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:129)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:85)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:166)
+!SUBENTRY 1 org.eclipse.jdt.core 4 1009 2015-05-07 23:08:41.555
+!MESSAGE Unknown javadoc format for executeQuery() {key=Ljava/sql/PreparedStatement;.executeQuery()Ljava/sql/ResultSet;|Ljava/sql/SQLException;} [in PreparedStatement [in PreparedStatement.class [in java.sql [in C:\Oracle\Middleware\Oracle_Home\oracle_common\jdk\jre\lib\rt.jar]]]]
+
+!ENTRY org.eclipse.jdt.ui 4 10001 2015-05-07 23:51:24.906
+!MESSAGE Internal Error
+!STACK 1
+Java Model Exception: Java Model Status [Unknown javadoc format for executeQuery() {key=Ljava/sql/PreparedStatement;.executeQuery()Ljava/sql/ResultSet;|Ljava/sql/SQLException;} [in PreparedStatement [in PreparedStatement.class [in java.sql [in C:\Oracle\Middleware\Oracle_Home\oracle_common\jdk\jre\lib\rt.jar]]]]]
+	at org.eclipse.jdt.internal.core.JavadocContents.getMethodDoc(JavadocContents.java:158)
+	at org.eclipse.jdt.internal.core.BinaryMethod.getAttachedJavadoc(BinaryMethod.java:681)
+	at org.eclipse.jdt.internal.core.ResolvedBinaryMethod.getAttachedJavadoc(ResolvedBinaryMethod.java:1)
+	at org.eclipse.jdt.internal.ui.text.javadoc.JavadocContentAccess2.getHTMLContent(JavadocContentAccess2.java:499)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo(JavadocHover.java:689)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.internalGetHoverInfo(JavadocHover.java:607)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo2(JavadocHover.java:599)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:163)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:129)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:85)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:166)
+!SUBENTRY 1 org.eclipse.jdt.core 4 1009 2015-05-07 23:51:24.907
+!MESSAGE Unknown javadoc format for executeQuery() {key=Ljava/sql/PreparedStatement;.executeQuery()Ljava/sql/ResultSet;|Ljava/sql/SQLException;} [in PreparedStatement [in PreparedStatement.class [in java.sql [in C:\Oracle\Middleware\Oracle_Home\oracle_common\jdk\jre\lib\rt.jar]]]]
+
+!ENTRY org.eclipse.jdt.ui 4 10001 2015-05-07 23:55:31.331
+!MESSAGE Internal Error
+!STACK 1
+Java Model Exception: Java Model Status [Unknown javadoc format for equals(java.lang.Object) [in Object [in Object.class [in java.lang [in C:\Oracle\Middleware\Oracle_Home\oracle_common\jdk\jre\lib\rt.jar]]]]]
+	at org.eclipse.jdt.internal.core.JavadocContents.getMethodDoc(JavadocContents.java:158)
+	at org.eclipse.jdt.internal.core.BinaryMethod.getAttachedJavadoc(BinaryMethod.java:681)
+	at org.eclipse.jdt.internal.ui.text.javadoc.JavadocContentAccess2.getHTMLContent(JavadocContentAccess2.java:499)
+	at org.eclipse.jdt.internal.ui.text.java.ProposalInfo.extractJavadoc(ProposalInfo.java:93)
+	at org.eclipse.jdt.internal.ui.text.java.ProposalInfo.computeInfo(ProposalInfo.java:77)
+	at org.eclipse.jdt.internal.ui.text.java.ProposalInfo.getInfo(ProposalInfo.java:62)
+	at org.eclipse.jdt.internal.ui.text.java.AbstractJavaCompletionProposal.getAdditionalProposalInfo(AbstractJavaCompletionProposal.java:575)
+	at org.eclipse.jface.text.contentassist.AdditionalInfoController$3.run(AdditionalInfoController.java:106)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+!SUBENTRY 1 org.eclipse.jdt.core 4 1009 2015-05-07 23:55:31.331
+!MESSAGE Unknown javadoc format for equals(java.lang.Object) [in Object [in Object.class [in java.lang [in C:\Oracle\Middleware\Oracle_Home\oracle_common\jdk\jre\lib\rt.jar]]]]
+
+!ENTRY org.eclipse.jdt.ui 4 10001 2015-05-08 00:21:09.381
+!MESSAGE Internal Error
+!STACK 1
+Java Model Exception: Java Model Status [Unknown javadoc format for addBatch() [in PreparedStatement [in PreparedStatement.class [in java.sql [in C:\Oracle\Middleware\Oracle_Home\oracle_common\jdk\jre\lib\rt.jar]]]]]
+	at org.eclipse.jdt.internal.core.JavadocContents.getMethodDoc(JavadocContents.java:158)
+	at org.eclipse.jdt.internal.core.BinaryMethod.getAttachedJavadoc(BinaryMethod.java:681)
+	at org.eclipse.jdt.internal.ui.text.javadoc.JavadocContentAccess2.getHTMLContent(JavadocContentAccess2.java:499)
+	at org.eclipse.jdt.internal.ui.text.java.ProposalInfo.extractJavadoc(ProposalInfo.java:93)
+	at org.eclipse.jdt.internal.ui.text.java.ProposalInfo.computeInfo(ProposalInfo.java:77)
+	at org.eclipse.jdt.internal.ui.text.java.ProposalInfo.getInfo(ProposalInfo.java:62)
+	at org.eclipse.jdt.internal.ui.text.java.AbstractJavaCompletionProposal.getAdditionalProposalInfo(AbstractJavaCompletionProposal.java:575)
+	at org.eclipse.jface.text.contentassist.AdditionalInfoController$3.run(AdditionalInfoController.java:106)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+!SUBENTRY 1 org.eclipse.jdt.core 4 1009 2015-05-08 00:21:09.381
+!MESSAGE Unknown javadoc format for addBatch() [in PreparedStatement [in PreparedStatement.class [in java.sql [in C:\Oracle\Middleware\Oracle_Home\oracle_common\jdk\jre\lib\rt.jar]]]]
+
+!ENTRY org.eclipse.jdt.ui 4 10001 2015-05-08 00:21:09.532
+!MESSAGE Internal Error
+!STACK 1
+Java Model Exception: Java Model Status [Unknown javadoc format for setArray(int, java.sql.Array) [in PreparedStatement [in PreparedStatement.class [in java.sql [in C:\Oracle\Middleware\Oracle_Home\oracle_common\jdk\jre\lib\rt.jar]]]]]
+	at org.eclipse.jdt.internal.core.JavadocContents.getMethodDoc(JavadocContents.java:158)
+	at org.eclipse.jdt.internal.core.BinaryMethod.getAttachedJavadoc(BinaryMethod.java:681)
+	at org.eclipse.jdt.internal.ui.text.javadoc.JavadocContentAccess2.getHTMLContent(JavadocContentAccess2.java:499)
+	at org.eclipse.jdt.internal.ui.text.java.ProposalInfo.extractJavadoc(ProposalInfo.java:93)
+	at org.eclipse.jdt.internal.ui.text.java.ProposalInfo.computeInfo(ProposalInfo.java:77)
+	at org.eclipse.jdt.internal.ui.text.java.ProposalInfo.getInfo(ProposalInfo.java:62)
+	at org.eclipse.jdt.internal.ui.text.java.AbstractJavaCompletionProposal.getAdditionalProposalInfo(AbstractJavaCompletionProposal.java:575)
+	at org.eclipse.jface.text.contentassist.AdditionalInfoController$3.run(AdditionalInfoController.java:106)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+!SUBENTRY 1 org.eclipse.jdt.core 4 1009 2015-05-08 00:21:09.534
+!MESSAGE Unknown javadoc format for setArray(int, java.sql.Array) [in PreparedStatement [in PreparedStatement.class [in java.sql [in C:\Oracle\Middleware\Oracle_Home\oracle_common\jdk\jre\lib\rt.jar]]]]
+
+!ENTRY org.eclipse.jdt.ui 4 10001 2015-05-08 00:21:10.734
+!MESSAGE Internal Error
+!STACK 1
+Java Model Exception: Java Model Status [Unknown javadoc format for setShort(int, short) [in PreparedStatement [in PreparedStatement.class [in java.sql [in C:\Oracle\Middleware\Oracle_Home\oracle_common\jdk\jre\lib\rt.jar]]]]]
+	at org.eclipse.jdt.internal.core.JavadocContents.getMethodDoc(JavadocContents.java:158)
+	at org.eclipse.jdt.internal.core.BinaryMethod.getAttachedJavadoc(BinaryMethod.java:681)
+	at org.eclipse.jdt.internal.ui.text.javadoc.JavadocContentAccess2.getHTMLContent(JavadocContentAccess2.java:499)
+	at org.eclipse.jdt.internal.ui.text.java.ProposalInfo.extractJavadoc(ProposalInfo.java:93)
+	at org.eclipse.jdt.internal.ui.text.java.ProposalInfo.computeInfo(ProposalInfo.java:77)
+	at org.eclipse.jdt.internal.ui.text.java.ProposalInfo.getInfo(ProposalInfo.java:62)
+	at org.eclipse.jdt.internal.ui.text.java.AbstractJavaCompletionProposal.getAdditionalProposalInfo(AbstractJavaCompletionProposal.java:575)
+	at org.eclipse.jface.text.contentassist.AdditionalInfoController$3.run(AdditionalInfoController.java:106)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+!SUBENTRY 1 org.eclipse.jdt.core 4 1009 2015-05-08 00:21:10.734
+!MESSAGE Unknown javadoc format for setShort(int, short) [in PreparedStatement [in PreparedStatement.class [in java.sql [in C:\Oracle\Middleware\Oracle_Home\oracle_common\jdk\jre\lib\rt.jar]]]]
+
+!ENTRY org.eclipse.jdt.ui 4 10001 2015-05-08 00:21:10.992
+!MESSAGE Internal Error
+!STACK 1
+Java Model Exception: Java Model Status [Unknown javadoc format for setString(int, java.lang.String) [in PreparedStatement [in PreparedStatement.class [in java.sql [in C:\Oracle\Middleware\Oracle_Home\oracle_common\jdk\jre\lib\rt.jar]]]]]
+	at org.eclipse.jdt.internal.core.JavadocContents.getMethodDoc(JavadocContents.java:158)
+	at org.eclipse.jdt.internal.core.BinaryMethod.getAttachedJavadoc(BinaryMethod.java:681)
+	at org.eclipse.jdt.internal.ui.text.javadoc.JavadocContentAccess2.getHTMLContent(JavadocContentAccess2.java:499)
+	at org.eclipse.jdt.internal.ui.text.java.ProposalInfo.extractJavadoc(ProposalInfo.java:93)
+	at org.eclipse.jdt.internal.ui.text.java.ProposalInfo.computeInfo(ProposalInfo.java:77)
+	at org.eclipse.jdt.internal.ui.text.java.ProposalInfo.getInfo(ProposalInfo.java:62)
+	at org.eclipse.jdt.internal.ui.text.java.AbstractJavaCompletionProposal.getAdditionalProposalInfo(AbstractJavaCompletionProposal.java:575)
+	at org.eclipse.jface.text.contentassist.AdditionalInfoController$3.run(AdditionalInfoController.java:106)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+!SUBENTRY 1 org.eclipse.jdt.core 4 1009 2015-05-08 00:21:10.993
+!MESSAGE Unknown javadoc format for setString(int, java.lang.String) [in PreparedStatement [in PreparedStatement.class [in java.sql [in C:\Oracle\Middleware\Oracle_Home\oracle_common\jdk\jre\lib\rt.jar]]]]
+
+!ENTRY org.eclipse.jdt.ui 4 10001 2015-05-08 00:21:21.007
+!MESSAGE Internal Error
+!STACK 1
+Java Model Exception: Java Model Status [Unknown javadoc format for toUpperCase() [in String [in String.class [in java.lang [in C:\Oracle\Middleware\Oracle_Home\oracle_common\jdk\jre\lib\rt.jar]]]]]
+	at org.eclipse.jdt.internal.core.JavadocContents.getMethodDoc(JavadocContents.java:158)
+	at org.eclipse.jdt.internal.core.BinaryMethod.getAttachedJavadoc(BinaryMethod.java:681)
+	at org.eclipse.jdt.internal.ui.text.javadoc.JavadocContentAccess2.getHTMLContent(JavadocContentAccess2.java:499)
+	at org.eclipse.jdt.internal.ui.text.java.ProposalInfo.extractJavadoc(ProposalInfo.java:93)
+	at org.eclipse.jdt.internal.ui.text.java.ProposalInfo.computeInfo(ProposalInfo.java:77)
+	at org.eclipse.jdt.internal.ui.text.java.ProposalInfo.getInfo(ProposalInfo.java:62)
+	at org.eclipse.jdt.internal.ui.text.java.AbstractJavaCompletionProposal.getAdditionalProposalInfo(AbstractJavaCompletionProposal.java:575)
+	at org.eclipse.jface.text.contentassist.AdditionalInfoController$3.run(AdditionalInfoController.java:106)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+!SUBENTRY 1 org.eclipse.jdt.core 4 1009 2015-05-08 00:21:21.007
+!MESSAGE Unknown javadoc format for toUpperCase() [in String [in String.class [in java.lang [in C:\Oracle\Middleware\Oracle_Home\oracle_common\jdk\jre\lib\rt.jar]]]]
+
+!ENTRY org.eclipse.jdt.ui 4 10001 2015-05-08 00:21:21.119
+!MESSAGE Internal Error
+!STACK 1
+Java Model Exception: Java Model Status [Unknown javadoc format for concat(java.lang.String) [in String [in String.class [in java.lang [in C:\Oracle\Middleware\Oracle_Home\oracle_common\jdk\jre\lib\rt.jar]]]]]
+	at org.eclipse.jdt.internal.core.JavadocContents.getMethodDoc(JavadocContents.java:158)
+	at org.eclipse.jdt.internal.core.BinaryMethod.getAttachedJavadoc(BinaryMethod.java:681)
+	at org.eclipse.jdt.internal.ui.text.javadoc.JavadocContentAccess2.getHTMLContent(JavadocContentAccess2.java:499)
+	at org.eclipse.jdt.internal.ui.text.java.ProposalInfo.extractJavadoc(ProposalInfo.java:93)
+	at org.eclipse.jdt.internal.ui.text.java.ProposalInfo.computeInfo(ProposalInfo.java:77)
+	at org.eclipse.jdt.internal.ui.text.java.ProposalInfo.getInfo(ProposalInfo.java:62)
+	at org.eclipse.jdt.internal.ui.text.java.AbstractJavaCompletionProposal.getAdditionalProposalInfo(AbstractJavaCompletionProposal.java:575)
+	at org.eclipse.jface.text.contentassist.AdditionalInfoController$3.run(AdditionalInfoController.java:106)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+!SUBENTRY 1 org.eclipse.jdt.core 4 1009 2015-05-08 00:21:21.120
+!MESSAGE Unknown javadoc format for concat(java.lang.String) [in String [in String.class [in java.lang [in C:\Oracle\Middleware\Oracle_Home\oracle_common\jdk\jre\lib\rt.jar]]]]
+
+!ENTRY org.eclipse.jdt.ui 4 10001 2015-05-08 00:21:21.587
+!MESSAGE Internal Error
+!STACK 1
+Java Model Exception: Java Model Status [Unknown javadoc format for toLowerCase(java.util.Locale) [in String [in String.class [in java.lang [in C:\Oracle\Middleware\Oracle_Home\oracle_common\jdk\jre\lib\rt.jar]]]]]
+	at org.eclipse.jdt.internal.core.JavadocContents.getMethodDoc(JavadocContents.java:158)
+	at org.eclipse.jdt.internal.core.BinaryMethod.getAttachedJavadoc(BinaryMethod.java:681)
+	at org.eclipse.jdt.internal.ui.text.javadoc.JavadocContentAccess2.getHTMLContent(JavadocContentAccess2.java:499)
+	at org.eclipse.jdt.internal.ui.text.java.ProposalInfo.extractJavadoc(ProposalInfo.java:93)
+	at org.eclipse.jdt.internal.ui.text.java.ProposalInfo.computeInfo(ProposalInfo.java:77)
+	at org.eclipse.jdt.internal.ui.text.java.ProposalInfo.getInfo(ProposalInfo.java:62)
+	at org.eclipse.jdt.internal.ui.text.java.AbstractJavaCompletionProposal.getAdditionalProposalInfo(AbstractJavaCompletionProposal.java:575)
+	at org.eclipse.jface.text.contentassist.AdditionalInfoController$3.run(AdditionalInfoController.java:106)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+!SUBENTRY 1 org.eclipse.jdt.core 4 1009 2015-05-08 00:21:21.588
+!MESSAGE Unknown javadoc format for toLowerCase(java.util.Locale) [in String [in String.class [in java.lang [in C:\Oracle\Middleware\Oracle_Home\oracle_common\jdk\jre\lib\rt.jar]]]]
+
+!ENTRY org.eclipse.jdt.ui 4 10001 2015-05-08 00:21:21.807
+!MESSAGE Internal Error
+!STACK 1
+Java Model Exception: Java Model Status [Unknown javadoc format for toString() [in String [in String.class [in java.lang [in C:\Oracle\Middleware\Oracle_Home\oracle_common\jdk\jre\lib\rt.jar]]]]]
+	at org.eclipse.jdt.internal.core.JavadocContents.getMethodDoc(JavadocContents.java:158)
+	at org.eclipse.jdt.internal.core.BinaryMethod.getAttachedJavadoc(BinaryMethod.java:681)
+	at org.eclipse.jdt.internal.ui.text.javadoc.JavadocContentAccess2.getHTMLContent(JavadocContentAccess2.java:499)
+	at org.eclipse.jdt.internal.ui.text.java.ProposalInfo.extractJavadoc(ProposalInfo.java:93)
+	at org.eclipse.jdt.internal.ui.text.java.ProposalInfo.computeInfo(ProposalInfo.java:77)
+	at org.eclipse.jdt.internal.ui.text.java.ProposalInfo.getInfo(ProposalInfo.java:62)
+	at org.eclipse.jdt.internal.ui.text.java.AbstractJavaCompletionProposal.getAdditionalProposalInfo(AbstractJavaCompletionProposal.java:575)
+	at org.eclipse.jface.text.contentassist.AdditionalInfoController$3.run(AdditionalInfoController.java:106)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+!SUBENTRY 1 org.eclipse.jdt.core 4 1009 2015-05-08 00:21:21.808
+!MESSAGE Unknown javadoc format for toString() [in String [in String.class [in java.lang [in C:\Oracle\Middleware\Oracle_Home\oracle_common\jdk\jre\lib\rt.jar]]]]
+
+!ENTRY org.eclipse.jdt.ui 4 10001 2015-05-08 00:21:21.920
+!MESSAGE Internal Error
+!STACK 1
+Java Model Exception: Java Model Status [Unknown javadoc format for toLowerCase() [in String [in String.class [in java.lang [in C:\Oracle\Middleware\Oracle_Home\oracle_common\jdk\jre\lib\rt.jar]]]]]
+	at org.eclipse.jdt.internal.core.JavadocContents.getMethodDoc(JavadocContents.java:158)
+	at org.eclipse.jdt.internal.core.BinaryMethod.getAttachedJavadoc(BinaryMethod.java:681)
+	at org.eclipse.jdt.internal.ui.text.javadoc.JavadocContentAccess2.getHTMLContent(JavadocContentAccess2.java:499)
+	at org.eclipse.jdt.internal.ui.text.java.ProposalInfo.extractJavadoc(ProposalInfo.java:93)
+	at org.eclipse.jdt.internal.ui.text.java.ProposalInfo.computeInfo(ProposalInfo.java:77)
+	at org.eclipse.jdt.internal.ui.text.java.ProposalInfo.getInfo(ProposalInfo.java:62)
+	at org.eclipse.jdt.internal.ui.text.java.AbstractJavaCompletionProposal.getAdditionalProposalInfo(AbstractJavaCompletionProposal.java:575)
+	at org.eclipse.jface.text.contentassist.AdditionalInfoController$3.run(AdditionalInfoController.java:106)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+!SUBENTRY 1 org.eclipse.jdt.core 4 1009 2015-05-08 00:21:21.921
+!MESSAGE Unknown javadoc format for toLowerCase() [in String [in String.class [in java.lang [in C:\Oracle\Middleware\Oracle_Home\oracle_common\jdk\jre\lib\rt.jar]]]]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-08 00:24:16.889
+!MESSAGE Publishing beginning.
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-08 00:24:16.908
+!MESSAGE Module changed:[com.learning.testProject]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-08 00:24:16.915
+!MESSAGE Total deleted modules: 0
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-08 00:24:16.951
+!MESSAGE Module changed:[com.learning.testProject]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-08 00:24:16.957
+!MESSAGE Module Status: 
+-com.learning.testProject (change) (redeploy)
+
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-08 00:24:16.969
+!MESSAGE ***dm.getAvailableModules (initModuleNameCache)
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-08 00:24:18.197
+!MESSAGE Status INFO: oracle.eclipse.tools.weblogic code=2000 ***dm.undeploy (undeploy) _auto_generated_ear_ null from targets [{Target=AdminServer, WebLogicTargetType=server, Name=_auto_generated_ear_}]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-08 00:24:23.933
+!MESSAGE Waiting on ProgressObject:@21153312
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-08 00:24:28.821
+!MESSAGE ProgressObject completed :@21153312
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-08 00:24:28.835
+!MESSAGE ***dm.getAvailableModules (initModuleNameCache)
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-08 00:24:28.866
+!MESSAGE Module _auto_generated_ear_ was undeployed sucessfully.
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-08 00:24:28.872
+!MESSAGE ***dm.getAvailableModules (initModuleNameCache)
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-08 00:24:28.890
+!MESSAGE ***dm.distribute (deploy) module _auto_generated_ear_
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-08 00:24:30.436
+!MESSAGE Waiting on ProgressObject:@12710123
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-08 00:24:42.844
+!MESSAGE ProgressObject completed :@12710123
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-08 00:24:42.914
+!MESSAGE _auto_generated_ear_ deployed successfully.
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-08 00:24:42.921
+!MESSAGE ***dm.start (startModule) _auto_generated_ear_
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-08 00:24:44.021
+!MESSAGE Waiting on ProgressObject:@17220579
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-08 00:24:48.884
+!MESSAGE ProgressObject completed :@17220579
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-08 00:24:48.890
+!MESSAGE Started _auto_generated_ear_
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-08 00:24:48.895
+!MESSAGE Module _auto_generated_ear_ deployed successfully.
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2015-05-08 00:24:48.901
+!MESSAGE Publishing finished.
