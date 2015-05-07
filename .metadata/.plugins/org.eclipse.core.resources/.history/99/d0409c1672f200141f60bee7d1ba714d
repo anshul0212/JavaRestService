@@ -1,0 +1,30 @@
+package com.learning.testProject;
+
+import javax.naming.*;
+import javax.sql.*;
+
+public class MySqlDB {
+
+	private static DataSource mySqlDataSource = null;
+	private static Context context = null;
+	
+	public static DataSource getMySqlDBCon() throws Exception 
+	{
+		try
+		{
+			if(context == null)
+			{
+				context = new InitialContext();
+			}
+			else
+			{
+				mySqlDataSource = (DataSource) context.lookup("mysql_ds");
+			}
+		}
+		catch( Exception e)
+		{
+			
+		}
+		return mySqlDataSource;
+	}
+}

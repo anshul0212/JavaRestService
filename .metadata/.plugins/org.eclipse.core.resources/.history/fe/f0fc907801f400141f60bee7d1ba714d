@@ -1,0 +1,34 @@
+package com.learning.testProject.inventory;
+
+import javax.ws.*;
+import javax.ws.rs.*;
+import javax.ws.rs.core.MediaType;
+
+import java.sql.*;
+
+import com.learning.testProject.dao.*;
+
+@Path("/inventory")
+public class V1_Inventory {
+	
+	@GET
+	@Produces(MediaType.APPLICATION_JSON)
+	public String getInventory() throws Exception
+	{
+		PreparedStatement query = null;
+		Connection conn = null;
+		
+		conn = MySqlDB.getMySqlDBCon().getConnection();
+		query = conn.prepareStatement("select ");
+		
+		ResultSet rs = query.executeQuery();
+		
+		while(rs.next())
+		{
+			
+		}
+		
+		return "";
+	}
+
+}

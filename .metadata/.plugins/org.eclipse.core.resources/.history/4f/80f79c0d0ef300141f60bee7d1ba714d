@@ -1,0 +1,8 @@
+package com.learning.testProject.inventory;
+
+import javax.ws.*;
+
+import com.learning.testProject.dao.dao;
+public class V1_Inventory {
+
+}

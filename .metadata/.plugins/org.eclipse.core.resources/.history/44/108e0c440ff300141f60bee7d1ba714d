@@ -1,0 +1,12 @@
+package com.learning.testProject.inventory;
+
+import javax.ws.*;
+import javax.ws.rs.core.*;
+import java.sql.*;
+import com.learning.testProject.dao.*;
+
+@Path("/inventory")
+public class V1_Inventory {
+	
+
+}
